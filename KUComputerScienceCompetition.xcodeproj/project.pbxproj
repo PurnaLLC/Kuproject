@@ -12,6 +12,13 @@
 		302EEBAE2AA8EB5F005F81AB /* CheckInDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EEBAD2AA8EB5F005F81AB /* CheckInDataService.swift */; };
 		302EEBB02AA8EBBC005F81AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EEBAF2AA8EBBC005F81AB /* User.swift */; };
 		302EEBB22AA8EBE4005F81AB /* ChatInListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EEBB12AA8EBE4005F81AB /* ChatInListModel.swift */; };
+		3060FF012AC46F3000CBE117 /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF002AC46F3000CBE117 /* AIChatView.swift */; };
+		3060FF032AC46F4F00CBE117 /* AIChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */; };
+		3060FF052AC46F7000CBE117 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF042AC46F7000CBE117 /* OpenAIService.swift */; };
+		3060FF072AC46F9100CBE117 /* FirebaseMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF062AC46F9100CBE117 /* FirebaseMessageModel.swift */; };
+		3060FF092AC46FEC00CBE117 /* MessageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF082AC46FEC00CBE117 /* MessageDataService.swift */; };
+		3060FF0B2AC4708300CBE117 /* FirebaseMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */; };
+		3060FF0E2AC4719900CBE117 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3060FF0D2AC4719900CBE117 /* Alamofire */; };
 		3069A9252A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A9242A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift */; };
 		3069A9272A9F979700E96C79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A9262A9F979700E96C79 /* ContentView.swift */; };
 		3069A9292A9F979800E96C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3069A9282A9F979800E96C79 /* Assets.xcassets */; };
@@ -64,6 +71,12 @@
 		302EEBAD2AA8EB5F005F81AB /* CheckInDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInDataService.swift; sourceTree = "<group>"; };
 		302EEBAF2AA8EBBC005F81AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		302EEBB12AA8EBE4005F81AB /* ChatInListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInListModel.swift; sourceTree = "<group>"; };
+		3060FF002AC46F3000CBE117 /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
+		3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewModel.swift; sourceTree = "<group>"; };
+		3060FF042AC46F7000CBE117 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		3060FF062AC46F9100CBE117 /* FirebaseMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageModel.swift; sourceTree = "<group>"; };
+		3060FF082AC46FEC00CBE117 /* MessageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataService.swift; sourceTree = "<group>"; };
+		3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageViewModel.swift; sourceTree = "<group>"; };
 		3069A9212A9F979700E96C79 /* KUComputerScienceCompetition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KUComputerScienceCompetition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3069A9242A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUComputerScienceCompetitionApp.swift; sourceTree = "<group>"; };
 		3069A9262A9F979700E96C79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +116,7 @@
 				3069A9462A9F98CB00E96C79 /* FirebaseCrashlytics in Frameworks */,
 				3069A9662A9F98CB00E96C79 /* FirebaseRemoteConfigSwift in Frameworks */,
 				3069A9702A9F9ABC00E96C79 /* GoogleSignIn in Frameworks */,
+				3060FF0E2AC4719900CBE117 /* Alamofire in Frameworks */,
 				3069A9582A9F98CB00E96C79 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				3069A94A2A9F98CB00E96C79 /* FirebaseDatabaseSwift in Frameworks */,
 				3069A9542A9F98CB00E96C79 /* FirebaseFunctions in Frameworks */,
@@ -123,6 +137,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3060FEFF2AC46F0000CBE117 /* AI Chat */ = {
+			isa = PBXGroup;
+			children = (
+				3060FF002AC46F3000CBE117 /* AIChatView.swift */,
+				3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */,
+				3060FF042AC46F7000CBE117 /* OpenAIService.swift */,
+				3060FF082AC46FEC00CBE117 /* MessageDataService.swift */,
+				3060FF062AC46F9100CBE117 /* FirebaseMessageModel.swift */,
+				3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */,
+			);
+			path = "AI Chat";
+			sourceTree = "<group>";
+		};
 		3069A9182A9F979700E96C79 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +206,7 @@
 				3069A97B2A9F9FB500E96C79 /* DailyCheckUp */,
 				3069A9792A9F9FA500E96C79 /* Profile */,
 				3069A9772A9F9F8600E96C79 /* TabView */,
+				3060FEFF2AC46F0000CBE117 /* AI Chat */,
 				3069A9742A9F9BD900E96C79 /* Auth */,
 			);
 			name = "Views and ViewModels";
@@ -309,6 +337,7 @@
 				3069A9692A9F98CB00E96C79 /* FirebaseStorageCombine-Community */,
 				3069A96F2A9F9ABC00E96C79 /* GoogleSignIn */,
 				3069A9712A9F9ABC00E96C79 /* GoogleSignInSwift */,
+				3060FF0D2AC4719900CBE117 /* Alamofire */,
 			);
 			productName = KUComputerScienceCompetition;
 			productReference = 3069A9212A9F979700E96C79 /* KUComputerScienceCompetition.app */;
@@ -341,6 +370,7 @@
 			packageReferences = (
 				3069A9342A9F98CB00E96C79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				3069A96E2A9F9ABC00E96C79 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				3060FF0C2AC4719900CBE117 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 3069A9222A9F979700E96C79 /* Products */;
 			projectDirPath = "";
@@ -369,20 +399,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3060FF012AC46F3000CBE117 /* AIChatView.swift in Sources */,
 				30B037212AA8C1D000BA25D5 /* CheckInViewModel.swift in Sources */,
 				3069A9272A9F979700E96C79 /* ContentView.swift in Sources */,
+				3060FF092AC46FEC00CBE117 /* MessageDataService.swift in Sources */,
 				30B0372B2AA8C4A500BA25D5 /* LoginView.swift in Sources */,
 				30B037152AA7F89900BA25D5 /* TodoListView.swift in Sources */,
 				30B037192AA802C900BA25D5 /* CheckInListView.swift in Sources */,
 				30B0372D2AA8C4E700BA25D5 /* ForgotPassword.swift in Sources */,
+				3060FF052AC46F7000CBE117 /* OpenAIService.swift in Sources */,
 				302EEBB22AA8EBE4005F81AB /* ChatInListModel.swift in Sources */,
 				3069A9252A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift in Sources */,
 				30B037132AA7F86E00BA25D5 /* InputView.swift in Sources */,
 				302EEBA82AA8E933005F81AB /* Home.swift in Sources */,
+				3060FF032AC46F4F00CBE117 /* AIChatViewModel.swift in Sources */,
 				302EEBAE2AA8EB5F005F81AB /* CheckInDataService.swift in Sources */,
 				30B037232AA8C1ED00BA25D5 /* ProfileView.swift in Sources */,
+				3060FF0B2AC4708300CBE117 /* FirebaseMessageViewModel.swift in Sources */,
 				302EEBAA2AA8E9B0005F81AB /* RegistrationView.swift in Sources */,
 				302EEBB02AA8EBBC005F81AB /* User.swift in Sources */,
+				3060FF072AC46F9100CBE117 /* FirebaseMessageModel.swift in Sources */,
 				30B037312AA8C54600BA25D5 /* AuthViewModel.swift in Sources */,
 				30B037172AA7F8B200BA25D5 /* CreateTodo.swift in Sources */,
 				30B0371B2AA802E700BA25D5 /* CheckInEditView.swift in Sources */,
@@ -588,6 +624,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3060FF0C2AC4719900CBE117 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		3069A9342A9F98CB00E96C79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -607,6 +651,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3060FF0D2AC4719900CBE117 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3060FF0C2AC4719900CBE117 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		3069A9352A9F98CB00E96C79 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3069A9342A9F98CB00E96C79 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

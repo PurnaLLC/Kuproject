@@ -38,6 +38,11 @@ struct TodoListView: View {
             return vm.checkins.sorted { $0.tododate < $1.tododate }
         }
     }
+    
+    @StateObject var messageVm = FirebaseMessagesViewModel(ds: FirebaseMessageDataService())
+
+    
+    
 
     var body: some View {
         
@@ -148,16 +153,32 @@ struct TodoListView: View {
                     
                 }
                 
-                
-                Button {
+                HStack{
+                    
+                    Button {
+                        
+                        
+                        isShowingSheet = true
+                        
+                        
+                    } label: {
+                        Text("Add")
+                    }
                     
                     
-                    isShowingSheet = true
-                    
-                    
-                } label: {
-                    Text("Add")
+                    NavigationLink {
+                        
+                        
+                        AIChatView( vm: messageVm)
+                        
+                        
+                    } label: {
+                        
+                        Text("AI")
+                    }
+
                 }
+                
                 
                 
                 .sheet(isPresented: $isShowingSheet) {

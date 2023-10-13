@@ -12,7 +12,18 @@ import SwiftUI
 struct ProfileView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
+    
+    
+    @AppStorage("theme") var darkMode = false
+    
+    let fire = "🔥"
+
+    @AppStorage("streak") var streak = 0
+    
+    
+    
     var body: some View {
+        
         
         
         
@@ -55,6 +66,8 @@ struct ProfileView: View {
                             
                             viewModel.signOut()
                             
+                        
+                            
                         } label: {
               
                            
@@ -93,7 +106,7 @@ struct ProfileView: View {
                                     }
                                 }
                                 viewModel.signOut()
-                                
+                                streak = 0
                                 
                                 
                             } label: {
@@ -122,13 +135,37 @@ struct ProfileView: View {
                     
                 }
                 
+         
                 
+                Toggle(isOn: $darkMode){
+                    
+                    Text("Dark Mode")
+                    
+                        .foregroundColor(darkMode ? Color.white : Color.black)
+
+                    
+                }
                 
+                ZStack{
+                  
+                        Text(fire)
+                            .font(.system(size: 150))
+                        
+                            Text("\(streak)")
+                                .font(.system(size: 50))
+                                .padding(.bottom, -100)
+                        
+                    
+                }
             }
+                
             
         }
         
     }
+    
+
+    
     
     
 }

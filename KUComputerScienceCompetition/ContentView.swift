@@ -10,14 +10,30 @@ import SwiftUI
 struct ContentsView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     let getUserDataTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    @StateObject var newtworkManager = NetworkManager()
 
     var body: some View {
         Group {
-            if viewModel.currentUser != nil {
-                Home()
-            } else {
-                LoginView()
+            if newtworkManager.isConnected{
+                
+                if viewModel.userSession != nil {
+                    
+                    Home()
+                    
+                } else {
+                    LoginView()
+                }
+            }else{
+                
+                
+                NotConnected()
+                
+                
             }
+            
+            
+            
         }
       
     }

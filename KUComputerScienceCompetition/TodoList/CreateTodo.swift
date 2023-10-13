@@ -15,6 +15,9 @@ struct CreateTodo: View {
     @State private var streak: Int = 0
     @State private var lastCheckedDate: Date?
     
+    
+    
+    
     var body: some View {
         
         VStack{
@@ -45,9 +48,17 @@ struct CreateTodo: View {
             
             
             Button {
+                
+                
+                 
+              
+
                 save(checkin)
+                
                 dismiss()
-                performCheckIn()
+                
+                
+                
             } label: {
                 Text("Save")
             }
@@ -65,47 +76,19 @@ struct CreateTodo: View {
         .padding()
     }
     
+
+
+
+
+
+
+
+
+
     
-    private func performCheckIn() {
-        let currentDate = Date()
-        
-        // Check if there's a last checked date
-        if let lastDate = lastCheckedDate {
-            let calendar = Calendar.current
-            
-            // Compare date components, excluding time
-            if calendar.isDateInToday(lastDate) {
-                // Already checked in today
-                return
-            }
-            
-            if calendar.isDateInYesterday(lastDate) {
-                // Checked in yesterday, increment the streak
-                streak += 1
-            } else {
-                // Missed a day, reset streak
-                streak = 0
-            }
-        } else {
-            // First time check-in
-            streak = 1
-        }
-        // Save the current date
-        lastCheckedDate = currentDate
-        saveStreak()
-    }
-    
-    
-    private func saveStreak() {
-        UserDefaults.standard.setValue(streak, forKey: "streak")
-        UserDefaults.standard.setValue(lastCheckedDate, forKey: "lastCheckedDate")
-    }
-    private func loadStreak() {
-        streak = UserDefaults.standard.integer(forKey: "streak")
-        lastCheckedDate = UserDefaults.standard.object(forKey: "lastCheckedDate") as? Date
-    }
-    
-    
-    
+
+
+
+
     
 }

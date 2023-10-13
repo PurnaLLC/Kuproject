@@ -12,13 +12,36 @@ struct Home: View {
     
     @StateObject var vm = CheckInViewModel(ds: FirebaseDataService())
     
+    
+    
+    @StateObject var newtworkManager = NetworkManager()
+
+    
+    
+    
+    @StateObject var ncVM = NCCheckInViewModel(ds: NCUserDefaultDataService())
+
+    
+    
+    
     var body: some View {
         NavigationView{
             VStack{
                 HStack{
                     NavigationLink {
                         
-                        CheckInListView(vm: vm)
+                        
+                        if newtworkManager.isConnected{
+                            
+                            CheckInListView(vm: vm)
+                        }else{
+                            
+                            
+                            NotConnected()
+                        }
+                        
+                        
+                        
                     } label: {
                         Image(systemName: "calendar")
                             .font(.system(size: 40))
@@ -28,7 +51,18 @@ struct Home: View {
                 
                     
                     NavigationLink {
-                        ProfileView()
+                        
+                        
+                    if newtworkManager.isConnected{
+                            ProfileView()
+                            
+                            
+                    }else{
+                        
+                        
+                        NotConnected()
+                    }
+                        
                     } label: {
                         Image(systemName: "person.circle.fill")
                             .font(.system(size: 40))
@@ -40,8 +74,22 @@ struct Home: View {
                     
                 }
                 
-                TodoListView(vm: vm)
-
+                
+                
+                if newtworkManager.isConnected{
+                    
+                
+      //            TodoListView(vm: vm)
+                    
+                    NCCheckinsView(vm: ncVM)
+                    
+                
+                }else{
+                    NCCheckinsView(vm: ncVM)
+                  
+                    
+                }
+                
             }
             
         }

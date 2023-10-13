@@ -15,7 +15,7 @@ import Combine
 
 
 @main
-struct KUComputerScienceCompetitionApp: App {
+ struct KUComputerScienceCompetitionApp: App {
     
     
     @AppStorage("signIn") var isSignIn = false

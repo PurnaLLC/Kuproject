@@ -12,6 +12,11 @@
 		302EEBAE2AA8EB5F005F81AB /* CheckInDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EEBAD2AA8EB5F005F81AB /* CheckInDataService.swift */; };
 		302EEBB02AA8EBBC005F81AB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EEBAF2AA8EBBC005F81AB /* User.swift */; };
 		302EEBB22AA8EBE4005F81AB /* ChatInListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EEBB12AA8EBE4005F81AB /* ChatInListModel.swift */; };
+		304606462ACCDCE200452DEE /* CheckinSortedListView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304606452ACCDCE200452DEE /* CheckinSortedListView3.swift */; };
+		304606482ACCDCEE00452DEE /* CheckinSortedListView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304606472ACCDCED00452DEE /* CheckinSortedListView4.swift */; };
+		3046064A2ACD0B4E00452DEE /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304606492ACD0B4E00452DEE /* NetworkManger.swift */; };
+		3046064F2ACD12AC00452DEE /* NotConnected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046064E2ACD12AC00452DEE /* NotConnected.swift */; };
+		304606512ACD159700452DEE /* NotConnectedAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304606502ACD159700452DEE /* NotConnectedAI.swift */; };
 		3060FF012AC46F3000CBE117 /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF002AC46F3000CBE117 /* AIChatView.swift */; };
 		3060FF032AC46F4F00CBE117 /* AIChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */; };
 		3060FF052AC46F7000CBE117 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF042AC46F7000CBE117 /* OpenAIService.swift */; };
@@ -19,6 +24,10 @@
 		3060FF092AC46FEC00CBE117 /* MessageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF082AC46FEC00CBE117 /* MessageDataService.swift */; };
 		3060FF0B2AC4708300CBE117 /* FirebaseMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */; };
 		3060FF0E2AC4719900CBE117 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3060FF0D2AC4719900CBE117 /* Alamofire */; };
+		3060FF1B2ACAFDA500CBE117 /* TodoFormatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF1A2ACAFDA500CBE117 /* TodoFormatedView.swift */; };
+		3060FF1D2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF1C2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift */; };
+		3060FF1F2ACB241100CBE117 /* CheckinSortedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */; };
+		3060FF212ACB293C00CBE117 /* CheckinSortedListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */; };
 		3069A9252A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A9242A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift */; };
 		3069A9272A9F979700E96C79 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A9262A9F979700E96C79 /* ContentView.swift */; };
 		3069A9292A9F979800E96C79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3069A9282A9F979800E96C79 /* Assets.xcassets */; };
@@ -53,6 +62,11 @@
 		3069A96A2A9F98CB00E96C79 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 3069A9692A9F98CB00E96C79 /* FirebaseStorageCombine-Community */; };
 		3069A9702A9F9ABC00E96C79 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 3069A96F2A9F9ABC00E96C79 /* GoogleSignIn */; };
 		3069A9722A9F9ABC00E96C79 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3069A9712A9F9ABC00E96C79 /* GoogleSignInSwift */; };
+		30944F862AD8BA4600BE925F /* NCCheckins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F852AD8BA4600BE925F /* NCCheckins.swift */; };
+		30944F892AD8BAA600BE925F /* NCCheckinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F882AD8BAA600BE925F /* NCCheckinsView.swift */; };
+		30944F8B2AD8BACA00BE925F /* NCCheckinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */; };
+		30944F8D2AD8C1AE00BE925F /* NCCreateTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F8C2AD8C1AE00BE925F /* NCCreateTodo.swift */; };
+		30944F8F2AD8C5B000BE925F /* NCEditCheckinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F8E2AD8C5B000BE925F /* NCEditCheckinView.swift */; };
 		30B037132AA7F86E00BA25D5 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037122AA7F86E00BA25D5 /* InputView.swift */; };
 		30B037152AA7F89900BA25D5 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037142AA7F89900BA25D5 /* TodoListView.swift */; };
 		30B037172AA7F8B200BA25D5 /* CreateTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037162AA7F8B200BA25D5 /* CreateTodo.swift */; };
@@ -71,12 +85,21 @@
 		302EEBAD2AA8EB5F005F81AB /* CheckInDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInDataService.swift; sourceTree = "<group>"; };
 		302EEBAF2AA8EBBC005F81AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		302EEBB12AA8EBE4005F81AB /* ChatInListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInListModel.swift; sourceTree = "<group>"; };
+		304606452ACCDCE200452DEE /* CheckinSortedListView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinSortedListView3.swift; sourceTree = "<group>"; };
+		304606472ACCDCED00452DEE /* CheckinSortedListView4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinSortedListView4.swift; sourceTree = "<group>"; };
+		304606492ACD0B4E00452DEE /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
+		3046064E2ACD12AC00452DEE /* NotConnected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotConnected.swift; sourceTree = "<group>"; };
+		304606502ACD159700452DEE /* NotConnectedAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotConnectedAI.swift; sourceTree = "<group>"; };
 		3060FF002AC46F3000CBE117 /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
 		3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewModel.swift; sourceTree = "<group>"; };
 		3060FF042AC46F7000CBE117 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		3060FF062AC46F9100CBE117 /* FirebaseMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageModel.swift; sourceTree = "<group>"; };
 		3060FF082AC46FEC00CBE117 /* MessageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataService.swift; sourceTree = "<group>"; };
 		3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageViewModel.swift; sourceTree = "<group>"; };
+		3060FF1A2ACAFDA500CBE117 /* TodoFormatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoFormatedView.swift; sourceTree = "<group>"; };
+		3060FF1C2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatedTodoCompleteView.swift; sourceTree = "<group>"; };
+		3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinSortedListView.swift; sourceTree = "<group>"; };
+		3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinSortedListView2.swift; sourceTree = "<group>"; };
 		3069A9212A9F979700E96C79 /* KUComputerScienceCompetition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KUComputerScienceCompetition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3069A9242A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KUComputerScienceCompetitionApp.swift; sourceTree = "<group>"; };
 		3069A9262A9F979700E96C79 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +107,11 @@
 		3069A92B2A9F979800E96C79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3069A9322A9F982D00E96C79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3069A9732A9F9BA700E96C79 /* KUComputerScienceCompetition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KUComputerScienceCompetition.entitlements; sourceTree = "<group>"; };
+		30944F852AD8BA4600BE925F /* NCCheckins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckins.swift; sourceTree = "<group>"; };
+		30944F882AD8BAA600BE925F /* NCCheckinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckinsView.swift; sourceTree = "<group>"; };
+		30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckinsViewModel.swift; sourceTree = "<group>"; };
+		30944F8C2AD8C1AE00BE925F /* NCCreateTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCreateTodo.swift; sourceTree = "<group>"; };
+		30944F8E2AD8C5B000BE925F /* NCEditCheckinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCEditCheckinView.swift; sourceTree = "<group>"; };
 		30B037122AA7F86E00BA25D5 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		30B037142AA7F89900BA25D5 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		30B037162AA7F8B200BA25D5 /* CreateTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodo.swift; sourceTree = "<group>"; };
@@ -137,6 +165,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3046064B2ACD127E00452DEE /* No Wifi Connection */ = {
+			isa = PBXGroup;
+			children = (
+				3046064E2ACD12AC00452DEE /* NotConnected.swift */,
+				304606502ACD159700452DEE /* NotConnectedAI.swift */,
+				30944F872AD8BA7A00BE925F /* NCCheckins */,
+			);
+			path = "No Wifi Connection";
+			sourceTree = "<group>";
+		};
 		3060FEFF2AC46F0000CBE117 /* AI Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +214,7 @@
 				30B0370A2AA63B0800BA25D5 /* Models */,
 				3069A9242A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift */,
 				3069A9262A9F979700E96C79 /* ContentView.swift */,
+				304606492ACD0B4E00452DEE /* NetworkManger.swift */,
 				3069A9322A9F982D00E96C79 /* GoogleService-Info.plist */,
 				3069A9282A9F979800E96C79 /* Assets.xcassets */,
 				3069A92A2A9F979800E96C79 /* Preview Content */,
@@ -195,6 +234,12 @@
 			isa = PBXGroup;
 			children = (
 				30B037122AA7F86E00BA25D5 /* InputView.swift */,
+				3060FF1A2ACAFDA500CBE117 /* TodoFormatedView.swift */,
+				3060FF1C2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift */,
+				3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */,
+				304606472ACCDCED00452DEE /* CheckinSortedListView4.swift */,
+				3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */,
+				304606452ACCDCE200452DEE /* CheckinSortedListView3.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -202,6 +247,7 @@
 		3069A96C2A9F9A6100E96C79 /* Views and ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3046064B2ACD127E00452DEE /* No Wifi Connection */,
 				3069A97A2A9F9FAA00E96C79 /* TodoList */,
 				3069A97B2A9F9FB500E96C79 /* DailyCheckUp */,
 				3069A9792A9F9FA500E96C79 /* Profile */,
@@ -260,6 +306,8 @@
 			children = (
 				30B037142AA7F89900BA25D5 /* TodoListView.swift */,
 				30B037202AA8C1D000BA25D5 /* CheckInViewModel.swift */,
+				30B037162AA7F8B200BA25D5 /* CreateTodo.swift */,
+				30B0371A2AA802E700BA25D5 /* CheckInEditView.swift */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -267,17 +315,27 @@
 		3069A97B2A9F9FB500E96C79 /* DailyCheckUp */ = {
 			isa = PBXGroup;
 			children = (
-				30B037162AA7F8B200BA25D5 /* CreateTodo.swift */,
 				30B037182AA802C900BA25D5 /* CheckInListView.swift */,
-				30B0371A2AA802E700BA25D5 /* CheckInEditView.swift */,
 			);
 			path = DailyCheckUp;
+			sourceTree = "<group>";
+		};
+		30944F872AD8BA7A00BE925F /* NCCheckins */ = {
+			isa = PBXGroup;
+			children = (
+				30944F882AD8BAA600BE925F /* NCCheckinsView.swift */,
+				30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */,
+				30944F8C2AD8C1AE00BE925F /* NCCreateTodo.swift */,
+				30944F8E2AD8C5B000BE925F /* NCEditCheckinView.swift */,
+			);
+			path = NCCheckins;
 			sourceTree = "<group>";
 		};
 		30B0370A2AA63B0800BA25D5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				302EEBAF2AA8EBBC005F81AB /* User.swift */,
+				30944F852AD8BA4600BE925F /* NCCheckins.swift */,
 				302EEBB12AA8EBE4005F81AB /* ChatInListModel.swift */,
 			);
 			path = Models;
@@ -399,16 +457,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3046064A2ACD0B4E00452DEE /* NetworkManger.swift in Sources */,
+				30944F8B2AD8BACA00BE925F /* NCCheckinsViewModel.swift in Sources */,
 				3060FF012AC46F3000CBE117 /* AIChatView.swift in Sources */,
 				30B037212AA8C1D000BA25D5 /* CheckInViewModel.swift in Sources */,
 				3069A9272A9F979700E96C79 /* ContentView.swift in Sources */,
+				30944F862AD8BA4600BE925F /* NCCheckins.swift in Sources */,
 				3060FF092AC46FEC00CBE117 /* MessageDataService.swift in Sources */,
 				30B0372B2AA8C4A500BA25D5 /* LoginView.swift in Sources */,
 				30B037152AA7F89900BA25D5 /* TodoListView.swift in Sources */,
+				3060FF1D2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift in Sources */,
 				30B037192AA802C900BA25D5 /* CheckInListView.swift in Sources */,
+				30944F892AD8BAA600BE925F /* NCCheckinsView.swift in Sources */,
+				30944F8D2AD8C1AE00BE925F /* NCCreateTodo.swift in Sources */,
 				30B0372D2AA8C4E700BA25D5 /* ForgotPassword.swift in Sources */,
 				3060FF052AC46F7000CBE117 /* OpenAIService.swift in Sources */,
+				3060FF212ACB293C00CBE117 /* CheckinSortedListView2.swift in Sources */,
 				302EEBB22AA8EBE4005F81AB /* ChatInListModel.swift in Sources */,
+				3046064F2ACD12AC00452DEE /* NotConnected.swift in Sources */,
 				3069A9252A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift in Sources */,
 				30B037132AA7F86E00BA25D5 /* InputView.swift in Sources */,
 				302EEBA82AA8E933005F81AB /* Home.swift in Sources */,
@@ -417,11 +483,17 @@
 				30B037232AA8C1ED00BA25D5 /* ProfileView.swift in Sources */,
 				3060FF0B2AC4708300CBE117 /* FirebaseMessageViewModel.swift in Sources */,
 				302EEBAA2AA8E9B0005F81AB /* RegistrationView.swift in Sources */,
+				3060FF1F2ACB241100CBE117 /* CheckinSortedListView.swift in Sources */,
+				30944F8F2AD8C5B000BE925F /* NCEditCheckinView.swift in Sources */,
 				302EEBB02AA8EBBC005F81AB /* User.swift in Sources */,
 				3060FF072AC46F9100CBE117 /* FirebaseMessageModel.swift in Sources */,
+				3060FF1B2ACAFDA500CBE117 /* TodoFormatedView.swift in Sources */,
 				30B037312AA8C54600BA25D5 /* AuthViewModel.swift in Sources */,
 				30B037172AA7F8B200BA25D5 /* CreateTodo.swift in Sources */,
 				30B0371B2AA802E700BA25D5 /* CheckInEditView.swift in Sources */,
+				304606512ACD159700452DEE /* NotConnectedAI.swift in Sources */,
+				304606462ACCDCE200452DEE /* CheckinSortedListView3.swift in Sources */,
+				304606482ACCDCEE00452DEE /* CheckinSortedListView4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

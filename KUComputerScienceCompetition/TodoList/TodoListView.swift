@@ -18,15 +18,15 @@ struct TodoListView: View {
     @State private var streak: Int = 0
     @State private var lastCheckedDate: Date?
     
-  
+    
     @State private var sortingOption: SortingOption = .newestFirst
-
+    
     enum SortingOption: String, CaseIterable {
         case newestFirst = "First Add"
         case nameAZ = "A-Z"
         case duedate = "Coming Up"
     }
-
+    
     var sortedCheckins: [CheckIn] {
         switch sortingOption {
         case .newestFirst:
@@ -40,115 +40,127 @@ struct TodoListView: View {
     }
     
     @StateObject var messageVm = FirebaseMessagesViewModel(ds: FirebaseMessageDataService())
-
     
     
-
+    
+    
+    @AppStorage("theme") var darkMode = false
+    
+    
+    
+    
+    
+    
+    @StateObject var vmView = CheckInViewModel(ds: FirebaseDataService())
+    
+    @StateObject var vmView2 = CheckInViewModel(ds: UserDefaultDataService())
+    
+    
+    
+    
+    
+    
+    @State private var isEmpty: Bool = true
+    @State private var isEmpty2: Bool = true
+    
+    
+    @StateObject var newtworkManager = NetworkManager()
+    
+    
     var body: some View {
-        
-        VStack{
+   
+
+              
             
+        NavigationStack {
             
-            NavigationStack {
+            VStack {
                 
-                
-                
-                VStack{
-                    Text("Todo" )
-                }
                 
                 Picker("Sort By", selection: $sortingOption) {
-                        ForEach(SortingOption.allCases, id: \.self) { option in
-                            Text(option.rawValue)
-                        }
+                    ForEach(SortingOption.allCases, id: \.self) { option in
+                        Text(option.rawValue)
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
                 
                 
                 
                 VStack{
-                   
-                ScrollView{
                     
-                    
-
+                    ScrollView{
+                        
+                        VStack{
+                            Text("Todo" )
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                            
+                            
+                        }
+                        
+                        if isEmpty == true{
+                            Text("NO checkin")
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                            
+                            
+                        }
+                        
+                        
+                        
+                        
                         ForEach(sortedCheckins) { checkin in
-                            HStack{
-                                NavigationLink {
-                                    CheckInEditView(checkin: checkin) { returnedCheckIn in
-                                        vm.update(checkin: returnedCheckIn)
-                                    }
-                                } label: {
-                                    
-                                    HStack{
-                                        Text("\(checkin.name) \(checkin.formattedDate())")
-                                            .foregroundColor(.black)
-                                            .bold()
-                                            .lineLimit(1)
-                                            .minimumScaleFactor(0.00000000001)
-                                            .frame(maxWidth: .infinity, alignment: .leading)
+                            if checkin.iscompleted == true{
                                 
-                                    }
-                                    .padding(.leading, 5)
-                                    
-                                    
-                                }
+                            }else{
                                 
-                                HStack{
-                                    
-                                    Menu {
-                                        Button(role: .destructive) {
-                                            
-                                            vm.delete(checkin: checkin)
-                                            
-                                            
-                                        } label: {
-                                            Image(systemName: "trash")
-                                                .resizable()
-                                                .frame(width: 24, height: 24)
-                                                .foregroundColor(.red)
-                                                .cornerRadius(10)
-                                                .multilineTextAlignment(.center)
-                                            Text("Delete Todo")
-                                            
-                                            
+                                TodoFormatedView(checkin: checkin, vm: vmView)
+                                        .onAppear{
+                                            isEmpty = false
                                         }
-                                        
-                                        
-                                        
-                                        
-                                        
-                                    } label: {
-                                        Image(systemName: "trash")
-                                            .resizable()
-                                            .frame(width: 24, height: 24)
-                                            .foregroundColor(.black)
-                                            .cornerRadius(10)
-                                            .multilineTextAlignment(.center)
-                                        
-                                        
-                                    }
-                                }
-                                .frame(maxWidth: 120, alignment: .trailing)
-                                .padding(.trailing, 10)
-
+                                    
+                                    
+                                
+                            }
+                        }
+                        
+                        
+                        Text("Done")
+                        
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+                        
+                        if isEmpty2 == true{
+                            Text("NO checkin")
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                            
+                        }
+                        
+                        
+                        ForEach(sortedCheckins) { checkin in
+                            if checkin.iscompleted == false{
+                                
+                            }else{
+                                
+                                    FormatedTodoCompleteView(vm: vmView, checkin: checkin)
+                                        .onAppear{
+                                            isEmpty2 = false
+                                        }
+                                    
+                                    
+                                    
+                                    
+                          
+                                
+                                
+                                
                                 
                                 
                                 
                             }
-                            .frame(width: 350, height: 50)
-                            .background(checkin.iscompleted ? Color.green : Color.red)
-                          
-                            
-                            .cornerRadius(10)
-                            
-                            
-           
-                  
-                            
                             
                         }
+                        
+                        
+                        
                     }
                     
                 }
@@ -161,42 +173,75 @@ struct TodoListView: View {
                         isShowingSheet = true
                         
                         
+                        
+                        
                     } label: {
+                        
+                        
+                        
                         Text("Add")
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+                        
+                        
                     }
+                    
+                    
+                    
+                    let lastTenCheckins = Array(vm.checkins.sorted { $0.tododate > $1.tododate }.prefix(10))
                     
                     
                     NavigationLink {
                         
                         
-                        AIChatView( vm: messageVm)
+                        if newtworkManager.isConnected{
+                            
+                            
+                            
+                            AIChatView( vm: messageVm , lastTenCheckins: lastTenCheckins)
+                            
+                        }else{
+                            NotConnectedAI()
+                        }
                         
                         
                     } label: {
                         
                         Text("AI")
-                    }
+                            .foregroundColor(darkMode ? Color.white : Color.black)
 
+                    }
+                    
                 }
+                
+                
+                
+                
                 
                 
                 
                 .sheet(isPresented: $isShowingSheet) {
                     NavigationStack {
+                        
                         CreateTodo(checkin: CheckIn()) { returnedCheckIn in
                             vm.add(checkin: returnedCheckIn)
+                            
+                            
+                            
                         }
                         .navigationTitle("Add Checkin")
                     }
                 }
+                
             }
+            .background(darkMode ? Color.black : Color.white) // Set background color based on darkMode
+            
+            
         }
+            
+        
+
+        
     }
-    /// Custom Button View
-   
 }
-
-
-    
 
 

@@ -17,8 +17,11 @@ import Combine
     
     class AIChatViewModel: ObservableObject {
         
-        @Published var messages: [Message] = [Message(id: "first-message", role: .system, content: "", createdAt: Date())]
+        @Published var messages: [Message] = [
+            Message(id: "first-message", role: .system, content: "You are an AI that helps people with their todos. You give the user feedback on important information relating to their todos.", createdAt: Date()),
         
+
+        ]
         
         
         @Published var currentInput: String = ""
@@ -26,22 +29,25 @@ import Combine
         private let openAIService = OpenAIService()
         
         
- 
         
-
-        
-        func sendMessage()  {
-            let newMessage = Message(id: UUID().uuidString, role: .user, content: currentInput, createdAt: Date())
+        func sendMessage(_ checkins: [CheckIn])  {
+            
+            
+            let checkinInfo = checkins.map { checkin in
+                return "\(checkin.name) - \(checkin.description) - \(checkin.tododate) - \(checkin.iscompleted) - \(checkin.ontime)"
+            }
+            
+            
+            let newMessage = Message(id: UUID().uuidString, role: .user, content: "\(currentInput) Here are my  todos: \(checkinInfo )", createdAt: Date())
             messages.append(newMessage)
+            
             currentInput = ""
-            let firebaseUSerMessage = FirebaseMessage(role: newMessage.role.rawValue, content: newMessage.content)
+            
+            let firebaseUSerMessage = FirebaseMessage(role: newMessage.role.rawValue, content: currentInput)
 
             add(firebaseUSerMessage)
-            //          let newMessage = Message(id: UUID().uuidString, role: .user, content: " I want 1 word. In this category: \(selectedPickerIndex3). I want this difficulty: \(selectedPickerIndex2). Do NOT give me any of these old words: \(oldWords)", createdAt: Date())
+
             
-            
-            
-            //     messages.append(newMessage)
             
             print(" MAX LOOK HERE \(newMessage)")
             
@@ -73,11 +79,6 @@ import Combine
          
                 
             }
-            
-            
-            
-            
-            
             
         }
         

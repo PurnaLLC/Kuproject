@@ -18,7 +18,7 @@ class CheckInViewModel: ObservableObject {
     private let ds: any DataService
     private var cancellables = Set<AnyCancellable>()
     
-    init(ds: any DataService = FirebaseDataService()) {
+    init(ds: any DataService = FirebaseDataService() ) {
         self.ds = ds
         ds.get()
             .sink { error in
@@ -41,4 +41,8 @@ class CheckInViewModel: ObservableObject {
             ds.delete(checkin)
         
     }
+    
+    
+    
 }
+

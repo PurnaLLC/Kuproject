@@ -23,20 +23,21 @@ struct AIChatView: View {
         
         
         @State private  var isFetchingData = false
+    
+    
+        
+        
      
         
         
         @ObservedObject var vm : FirebaseMessagesViewModel
     
     
-        
+        @State var lastTenCheckins: [CheckIn]
         
         var body: some View {
             VStack {
                 ScrollView {
-                    
-        
-                    
                     
                     
                     ForEach(vm.firebaseMessages.filter({$0.role != "system"}), id: \.id) { message in
@@ -49,13 +50,22 @@ struct AIChatView: View {
                 HStack {
                     TextField("Enter a message...", text: $viewModel.currentInput)
                         
+               
                     Button {
-                        viewModel.sendMessage()
+                        
+                        
+                        
+                        viewModel.sendMessage(lastTenCheckins)
+                        
+                        
+                        
                     } label: {
                         Text("Send")
                     }
 
                 }
+                
+            
             }
             .padding()
         }

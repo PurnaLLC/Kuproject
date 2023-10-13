@@ -1,17 +1,16 @@
 //
-//  ChatInListModel.swift
+//  NCCheckins.swift
 //  KUComputerScienceCompetition
 //
-//  Created by Maxwell Meyer on 9/6/23.
+//  Created by Maxwell Meyer on 10/12/23.
 //
-
 
 import Foundation
 import FirebaseFirestoreSwift
 
 
-struct CheckIn: Identifiable, Codable {
-    @DocumentID var id: String? = UUID().uuidString
+struct NCCheckIn: Identifiable, Codable {
+    var id = UUID()
     var date = Date()
     var name = ""
     var userId = ""
@@ -50,4 +49,5 @@ struct CheckIn: Identifiable, Codable {
     
     
 }
+
 

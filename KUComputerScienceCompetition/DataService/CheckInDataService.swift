@@ -45,56 +45,84 @@ class MockDataService: DataService {
 }
 
 class UserDefaultDataService: DataService {
-    
-    
     @Published private var checkins: [CheckIn] {
         didSet {
             save(items: checkins, key: key)
         }
     }
-    
+
     private var key = "UserDefaultDataService"
-    init(){
+
+    init() {
         checkins = []
         checkins = load(key: key)
     }
+
     func get() -> AnyPublisher<[CheckIn], Error> {
         $checkins.tryMap({$0}).eraseToAnyPublisher()
     }
-    
+
     func add(_ item: CheckIn) {
-        checkins.append(item)
+        do {
+            checkins.append(item)
+            save(items: checkins, key: key)
+        } catch {
+            print("Error adding item: \(error)")
+        }
     }
-    
+
+
     func update(_ item: CheckIn) {
         guard let index = checkins.firstIndex(where: {$0.id == item.id}) else { return }
         checkins[index] = item
     }
-    
 
     func delete(_ checkin: CheckIn) {
         checkins.removeAll { $0.id == checkin.id }
         save(items: checkins, key: key)
     }
 
-    // MARK: Private
-    func save<T: Identifiable & Codable> (items: [T], key: String) {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode (items) {
+    func save<T: Identifiable & Codable>(items: [T], key: String) {
+        do {
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601 // Use an appropriate date encoding strategy
+
+            // Encode the items directly into Data
+            let encodedData = try encoder.encode(items)
+
+            // Save the Data to UserDefaults
             let defaults = UserDefaults.standard
-            defaults.set(encoded, forKey: key)
+            defaults.set(encodedData, forKey: key)
+
+            print("Saved Data")
+        } catch {
+            print("Error encoding and saving data: \(error)")
         }
     }
-    func load<T: Identifiable & Codable> (key: String) -> [T] {
-        guard let data = UserDefaults.standard.object (forKey: key) as? Data else {return [] }
+
+    func load<T: Identifiable & Codable>(key: String) -> [T] {
+        guard let data = UserDefaults.standard.data(forKey: key) else {
+            print("No data found for key: \(key)")
+            return []
+        }
         let decoder = JSONDecoder()
-        if let dataArray = try? decoder.decode ([T].self, from: data) {
+        do {
+            let dataArray = try decoder.decode([T].self, from: data)
             return dataArray
+        } catch {
+            print("Error decoding and loading data: \(error)")
+            return []
         }
-        return []
     }
-    
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -192,3 +220,6 @@ class FirebaseDataService: DataService {
         }
     }
 }
+
+
+

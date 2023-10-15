@@ -393,6 +393,7 @@ struct NCCheckinsView: View {
                                 Text("Add")
                                     .foregroundColor(darkMode ? Color.white : Color.black)
                                     .font(.custom("Lora-Regular", size: 25))
+                                    .fontWeight(.medium)
 
                                 
                             }

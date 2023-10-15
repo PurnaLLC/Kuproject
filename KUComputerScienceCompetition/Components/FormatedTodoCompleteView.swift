@@ -16,14 +16,17 @@ struct FormatedTodoCompleteView: View {
 
     @State var checkin: CheckIn
     
+    @State var isPresentingCheckInEditView = false
+
+    @State private var isPresentingSheet2 = false
+
     
     var body: some View {
         HStack{
             HStack{
-                NavigationLink {
-                    CheckInEditView(checkin: checkin) { returnedCheckIn in
-                        vm.update(checkin: returnedCheckIn)
-                    }
+                Button {
+                    isPresentingSheet2 = true
+                    
                 } label: {
                     
                     HStack{
@@ -89,6 +92,15 @@ struct FormatedTodoCompleteView: View {
                 
                 
             }
+            
+            .sheet(isPresented: $isPresentingSheet2, content: {
+                CheckInEditView(checkin: checkin) { returnedCheckIn in
+                    vm.update(checkin: returnedCheckIn)
+                }
+            })
+            
+            
+            
             .frame(width: 350, height: 50)
             .background(checkin.ontime ? Color.green : Color.red)
             
@@ -101,5 +113,8 @@ struct FormatedTodoCompleteView: View {
         .padding(.bottom, 5)
 
     }
+    
+    
+    
 }
 

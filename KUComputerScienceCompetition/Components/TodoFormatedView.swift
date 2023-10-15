@@ -17,16 +17,23 @@ struct TodoFormatedView: View {
     
     @AppStorage("theme") var darkMode = false
 
+    @State var isPresentingCheckInEditView = false
+
+    
+    
+    @State private var isPresentingSheet = false
+
+    
     
     var body: some View {
     
         HStack{
             
             HStack{
-                NavigationLink {
-                    CheckInEditView(checkin: checkin) { returnedCheckIn in
-                        vm.update(checkin: returnedCheckIn)
-                    }
+                Button {
+                    isPresentingSheet = true
+
+                    
                 } label: {
                     
                     HStack{
@@ -91,6 +98,14 @@ struct TodoFormatedView: View {
                 
                 
    
+                
+                
+                .sheet(isPresented: $isPresentingSheet, content: {
+                    CheckInEditView(checkin: checkin) { returnedCheckIn in
+                        vm.update(checkin: returnedCheckIn)
+                    }
+                })
+                
                 
             }
             .frame(width: 350, height: 50)

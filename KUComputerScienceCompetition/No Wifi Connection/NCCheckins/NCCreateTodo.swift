@@ -15,6 +15,10 @@ struct NCCreateTodo: View {
         var save: (NCCheckIn)->()
         @Environment(\.dismiss) var dismiss
         
+    
+    @AppStorage("theme") var darkMode = false
+
+    
         var body: some View {
             
             VStack{
@@ -44,6 +48,22 @@ struct NCCreateTodo: View {
                 }
                 
                 
+           
+                
+                VStack(alignment: .center){
+                    
+                    TextField("Description of todo", text: $checkin.description, axis: .vertical)
+                               .lineLimit(2)
+                               .textFieldStyle(.roundedBorder)
+                               .padding()
+
+                }
+                
+                
+                .padding()
+
+                
+                
                 Button {
                     
                     
@@ -59,17 +79,24 @@ struct NCCreateTodo: View {
                     
                     
                 } label: {
-                    Text("Save")
+                    HStack{
+                        Text("Save")
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+                            .font(.custom("Lora-Regular", size: 25))
+
+                        
+                    }
+                    .frame(width: 80, height: 50)
+                    
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(darkMode ? Color.white : Color.black, lineWidth: 2)
+                    )
+                    
+                    
+                    .padding(.bottom, 5)
                 }
                 
-                VStack(alignment: .center){
-                    
-                    TextField("Description of todo", text: $checkin.description, axis: .vertical)
-                               .lineLimit(2)
-                               .textFieldStyle(.roundedBorder)
-                               .padding()
-
-                }
                 
             }
             .padding()

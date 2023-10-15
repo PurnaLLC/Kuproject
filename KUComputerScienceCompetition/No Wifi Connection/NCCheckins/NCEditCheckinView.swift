@@ -15,7 +15,8 @@ struct NCEditCheckinView: View {
         @Environment(\.dismiss) var dismiss
         
 
-        
+    @AppStorage("theme") var darkMode = false
+
         
         @AppStorage("streak") var streak = 0
 
@@ -40,33 +41,63 @@ struct NCEditCheckinView: View {
                         VStack(alignment: .center){
                         
                             
-                            
-                            Button {
-                                
-                                
-                                checkin.iscompleted.toggle()
-                                
-                                
-                                if checkin.tododate > Date(){
-                                    
-                                    checkin.ontime = true
+                          
+                            HStack{
+                                if checkin.iscompleted{
+                                    Text("")
                                 }else{
-                                    checkin.ontime = false
+                                    Text("Mark As Done")
+                                }
+                            
+                                
+                                Button {
+                                    
+                                    
+                                    checkin.iscompleted.toggle()
+                                    
+                                    
+                                    if checkin.tododate > Date(){
+                                        
+                                        checkin.ontime = true
+                                    }else{
+                                        checkin.ontime = false
+                                        
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                    
+                                } label: {
+                                    
+                                        VStack{
+                                            Image(systemName: "checkmark.circle")
+                                            
+                                                .font(.title2)
+                                             
+                                                .foregroundColor(checkin.iscompleted ? Color.green : Color.red)
+                                                .padding(.horizontal, 18)
+                                                .padding(.vertical, 8)
+                                                .frame(width: 30, height: 30)
+                                                
+                                                
+                                        }
+                                 
+                                    
                                     
                                 }
                                 
                                 
                                 
-                                
-                                
-                            } label: {
-                              
-                                VStack{
-                                    Image(systemName: "checkmark.circle")
-                                }
-                                
-                                .background(checkin.iscompleted ? Color.green : Color.red)
                             }
+                            
+                            
+                            
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+
+                            
+                            
                             
                         }
                         VStack {
@@ -88,7 +119,20 @@ struct NCEditCheckinView: View {
                 }
                 
                 
+       
                 
+                VStack(alignment: .center){
+                    
+                    TextField("Description of todo", text: $checkin.description, axis: .vertical)
+                               .lineLimit(2)
+                               .textFieldStyle(.roundedBorder)
+                               .padding()
+
+                }
+                
+                
+                .padding()
+
                 Button {
                     save(checkin)
                     dismiss()
@@ -99,15 +143,22 @@ struct NCEditCheckinView: View {
                     
 
                 } label: {
-                    Text("Save")
-                }
-                
-                VStack(alignment: .center){
+                    HStack{
+                        Text("Save")
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+                            .font(.custom("Lora-Regular", size: 25))
+
+                        
+                    }
+                    .frame(width: 80, height: 50)
                     
-                    TextField("Description of todo", text: $checkin.description, axis: .vertical)
-                               .lineLimit(2)
-                               .textFieldStyle(.roundedBorder)
-                               .padding()
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(darkMode ? Color.white : Color.black, lineWidth: 2)
+                    )
+                    
+                    
+                    .padding(.bottom, 5)
 
                 }
                 

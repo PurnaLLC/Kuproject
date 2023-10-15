@@ -136,7 +136,7 @@ struct TodoListView: View {
                         
                         
                         if isEmpty == true{
-                            Text("NO checkin")
+                            Text("NO Todo")
                               .foregroundColor(darkMode ? Color.white : Color.black)
                             .font(.custom("Lora-Regular", size: 20))
 
@@ -281,7 +281,7 @@ struct TodoListView: View {
                         
                         
                         if isEmpty2 == true{
-                            Text("NO checkin")
+                            Text("NO Todo")
                                 .foregroundColor(darkMode ? Color.white : Color.black)
                                 .font(.custom("Lora-Regular", size: 20))
                             

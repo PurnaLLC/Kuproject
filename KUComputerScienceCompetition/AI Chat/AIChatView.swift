@@ -42,10 +42,10 @@ struct AIChatView: View {
                         
                         ForEach(vm.firebaseMessages.filter({$0.role != "system"}), id: \.id) { message in
                             
-                            Text("\(message.content)")
-                                .foregroundColor(darkMode ? Color.white : Color.black)
-                                .font(.custom("Lora-Regular", size: 20))
                             
+                            messageView(message: message)
+                            
+                              
                             
                         }
                     }
@@ -63,11 +63,10 @@ struct AIChatView: View {
              
                 HStack {
                     TextField("Talk with your AI assistant", text: $viewModel.currentInput)
-                        .foregroundColor(darkMode ? Color.black :  Color.black)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(.custom("Lora-Regular", size: 20))
-
-                    
+                        .foregroundColor(Color.black)
+                        
 
                
                     Button {
@@ -114,7 +113,31 @@ struct AIChatView: View {
         
         
             
+            
+ 
+            
+            
+            
+            
+            
+            
+            
         }
+    
+    func messageView(message: FirebaseMessage) -> some View {
+        HStack {
+            
+            let messageRole = message.role
+            if messageRole == "user" { Spacer()}
+            Text(message.content)
+                .padding()
+                .foregroundColor(darkMode ? Color.white : Color.black)
+                .font(.custom("Lora-Regular", size: 20))
+                .background(message.role == "user" ? Color.blue : Color.gray.opacity(0.2))
+                .cornerRadius(10)
+             if message.role == "assistant" { Spacer() }
+        }
+    }
         
      
     }

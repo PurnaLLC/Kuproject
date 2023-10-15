@@ -235,12 +235,13 @@ struct CheckinSortedListView2: View {
                 
                 ForEach(vm.checkins.sorted { $0.tododate > $1.tododate }) { checkin in
                     
-                    let threedays = Calendar.current.date(byAdding: .day, value: +3, to: Date()) ?? Date()
+                    
+                    
+                    let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) ?? Date()
                     
                     
                     
-                    
-                    if checkin.formattedDateComaring(date: checkin.tododate) == checkin.formattedDateComaring(date: threedays){
+                    if checkin.formattedDateComaring(date: checkin.tododate) == checkin.formattedDateComaring(date: yesterday){
                         
                         
                         

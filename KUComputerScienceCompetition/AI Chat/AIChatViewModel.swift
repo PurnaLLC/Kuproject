@@ -41,7 +41,8 @@ import Combine
             let newMessage = Message(id: UUID().uuidString, role: .user, content: "\(currentInput) Here are my  todos: \(checkinInfo )", createdAt: Date())
             messages.append(newMessage)
             
-            currentInput = ""
+                
+            
             
             let firebaseUSerMessage = FirebaseMessage(role: newMessage.role.rawValue, content: currentInput)
 
@@ -49,7 +50,6 @@ import Combine
 
             
             
-            print(" MAX LOOK HERE \(newMessage)")
             
             
             Task {

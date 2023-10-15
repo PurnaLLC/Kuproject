@@ -27,6 +27,7 @@ class OpenAIService {
     }
     
    
+
 }
 
 
@@ -60,7 +61,7 @@ struct OpenAIChatChoice: Decodable {
 
 
 enum Constants{
-    static let openAIApiKey = "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"
+    static let openAIApiKey = "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"
 }
 
 

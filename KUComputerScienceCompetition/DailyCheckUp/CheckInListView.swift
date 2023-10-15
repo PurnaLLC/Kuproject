@@ -16,7 +16,8 @@ struct CheckInListView: View {
     @State private var streak: Int = 0
     @State private var lastCheckedDate: Date?
     
-    
+    @AppStorage("theme") var darkMode = false
+
   
     @StateObject var vmView = CheckInViewModel(ds: FirebaseDataService())
 
@@ -27,18 +28,20 @@ struct CheckInListView: View {
         
         VStack{
             
-          
-      
+                
+                Text("Check Ins")
+                    .foregroundColor(darkMode ? Color.white : Color.black)
+                    .font(.custom("Lora-Regular", size: 30))
+                    .padding(.top, 10)
+                    .padding(.bottom, 5)
+                    .fontWeight(.bold)
+                    .padding(.top,60)
             
             
-            
-            NavigationStack {
-                
-                
-                ScrollView{
-          
-                
-                
+            ScrollView{
+                    
+                    
+                    
                     CheckinSortedListView( vm: vmView)
                     
                         .padding()
@@ -46,31 +49,52 @@ struct CheckInListView: View {
                     CheckinSortedListView2( vm: vmView)
                     
                         .padding()
-
+                    
                     
                     
                     CheckinSortedListView3( vm: vmView)
                     
                         .padding()
-
+                    
                     
                     
                     CheckinSortedListView4( vm: vmView)
                     
                         .padding()
-
-
                     
                     
-                   
-                }
-                .navigationTitle("Check Ins")
-                .toolbar {
-              
+                    
+                    
                     
                 }
+                
+                
+                
+                
+                
+                
+                
             }
-        }
+            
+        
+        .frame(
+            minWidth: 400,
+            maxWidth: 400,
+            minHeight: 0,
+            maxHeight: .infinity
+                )
+
+        
+        
+        .ignoresSafeArea()
+            
+     
+        
+        
+        .background(darkMode ? Color.black : Color.white)
+
+        
+        
     }
     
 

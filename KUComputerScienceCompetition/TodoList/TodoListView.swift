@@ -39,12 +39,11 @@ struct TodoListView: View {
         }
     }
     
-    @StateObject var messageVm = FirebaseMessagesViewModel(ds: FirebaseMessageDataService())
     
     
     
     
-    @AppStorage("theme") var darkMode = false
+  //  @AppStorage("theme") var darkMode = false
     
     
     
@@ -67,40 +66,72 @@ struct TodoListView: View {
     @StateObject var newtworkManager = NetworkManager()
     
     
+    @AppStorage("theme") var darkMode = false
+
+
+    
+    @ObservedObject var vmNC: NCCheckInViewModel
+
+    
+    
     var body: some View {
    
-
-              
+        
+        
             
-        NavigationStack {
+            
+            
             
             VStack {
                 
+                Text("Sort")
+                    .foregroundColor(darkMode ? Color.white : Color.black)
+                    .font(.custom("Lora-Regular", size: 20))
+                    .bold()
                 
-                Picker("Sort By", selection: $sortingOption) {
-                    ForEach(SortingOption.allCases, id: \.self) { option in
-                        Text(option.rawValue)
+                
+                
+                
+                VStack {
+                    Picker("Sort By", selection: $sortingOption) {
+                        ForEach(SortingOption.allCases, id: \.self) { option in
+                            Text(option.rawValue)
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                        }
                     }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .preferredColorScheme(darkMode ? .dark : .light)
+
                 }
-                .pickerStyle(SegmentedPickerStyle())
+
+                
+                
                 .padding()
                 
                 
                 
-                VStack{
-                    
+                VStack() {
+
                     ScrollView{
                         
-                        VStack{
+                        VStack(alignment: .leading) {
                             Text("Todo" )
                                 .foregroundColor(darkMode ? Color.white : Color.black)
-                            
+                                .font(.custom("Lora-Regular", size: 25))
+                                .bold()
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 5)
+
+
                             
                         }
                         
+                        
                         if isEmpty == true{
                             Text("NO checkin")
-                                .foregroundColor(darkMode ? Color.white : Color.black)
+                              .foregroundColor(darkMode ? Color.white : Color.black)
+                            .font(.custom("Lora-Regular", size: 20))
+
                             
                             
                         }
@@ -112,8 +143,10 @@ struct TodoListView: View {
                             if checkin.iscompleted == true{
                                 
                             }else{
-                                
-                                TodoFormatedView(checkin: checkin, vm: vmView)
+                                    
+                                    TodoFormatedView(checkin: checkin, vm: vmView)
+                                    
+                                    
                                         .onAppear{
                                             isEmpty = false
                                         }
@@ -123,14 +156,27 @@ struct TodoListView: View {
                             }
                         }
                         
+                                
                         
-                        Text("Done")
+                        VStack{
+                            Text("Done")
+                            
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                                .font(.custom("Lora-Regular", size: 25))
+                                .bold()
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 5)
+                            
+                            
+                            
+                        }
                         
-                            .foregroundColor(darkMode ? Color.white : Color.black)
                         
                         if isEmpty2 == true{
                             Text("NO checkin")
                                 .foregroundColor(darkMode ? Color.white : Color.black)
+                                .font(.custom("Lora-Regular", size: 20))
                             
                         }
                         
@@ -161,6 +207,21 @@ struct TodoListView: View {
                         
                         
                         
+                        
+                        
+                        ForEach(vmNC.ncCheckins) { checkinz in
+                            
+                            Text("")
+                                .onAppear{
+                                    
+                                    let returnedCheckIn = convertToCheckIn(checkinz)
+                                         vm.add(checkin: returnedCheckIn)
+                                    vmNC.delete(checkin: checkinz)
+                                        
+                                }
+                        }
+                        
+                        
                     }
                     
                 }
@@ -177,42 +238,31 @@ struct TodoListView: View {
                         
                     } label: {
                         
-                        
-                        
-                        Text("Add")
-                            .foregroundColor(darkMode ? Color.white : Color.black)
-                        
-                        
-                    }
-                    
-                    
-                    
-                    let lastTenCheckins = Array(vm.checkins.sorted { $0.tododate > $1.tododate }.prefix(10))
-                    
-                    
-                    NavigationLink {
-                        
-                        
-                        if newtworkManager.isConnected{
-                            
-                            
-                            
-                            AIChatView( vm: messageVm , lastTenCheckins: lastTenCheckins)
-                            
-                        }else{
-                            NotConnectedAI()
-                        }
-                        
-                        
-                    } label: {
-                        
-                        Text("AI")
-                            .foregroundColor(darkMode ? Color.white : Color.black)
+                        HStack{
+                            Text("Add")
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                                .font(.custom("Lora-Regular", size: 25))
 
+                            
+                        }
+                        .frame(width: 80, height: 50)
+                        
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 6)
+                                .stroke(darkMode ? Color.white : Color.black, lineWidth: 2)
+                        )
+                        
+                        
+                        .padding(.bottom, 5)
+                        
                     }
+                    
+                    
+                
+                    
                     
                 }
-                
+             
                 
                 
                 
@@ -233,14 +283,29 @@ struct TodoListView: View {
                 }
                 
             }
-            .background(darkMode ? Color.black : Color.white) // Set background color based on darkMode
+            
+
+            .frame(
+                  minWidth: 0,
+                  maxWidth: .infinity,
+                  minHeight: 0,
+                  maxHeight: .infinity,
+                  alignment: .topLeading
+                )
+
             
             
+            .background(darkMode ? Color.black : Color.white)
+        
         }
+        
+
             
         
 
-        
+
+    func convertToCheckIn(_ ncCheckin: NCCheckIn) -> CheckIn {
+        return CheckIn(date: ncCheckin.date, name: ncCheckin.name, userId: ncCheckin.userId, documentId: ncCheckin.documentId, iscompleted: ncCheckin.iscompleted, description: ncCheckin.description, tododate: ncCheckin.tododate, ontime: ncCheckin.ontime)
     }
 }
 

@@ -20,6 +20,7 @@ struct CheckinSortedListView3: View {
     @State private var isEmpty2: Bool = true
 
     
+    @AppStorage("theme") var darkMode = false
 
     
     var body: some View {
@@ -37,9 +38,14 @@ struct CheckinSortedListView3: View {
                     
                     HStack{
                         Text("Next 3 days")
-                            .foregroundColor(Color .black)
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+                            .font(.custom("Lora-Regular", size: 25))
+                            .fontWeight(.medium)
+
                         Image(systemName: "chevron.right")
                         
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+
                     }
                 }
 
@@ -51,9 +57,13 @@ struct CheckinSortedListView3: View {
                 } label: {
                     HStack{
                         Text("Next 3 days")
-                            .foregroundColor(Color .black)
-                        
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+                            .font(.custom("Lora-Regular", size: 25))
+                            .fontWeight(.medium)
+
                         Image(systemName: "chevron.down")
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+
                         
                         
                         
@@ -68,8 +78,10 @@ struct CheckinSortedListView3: View {
                     
                     
                     
-                        Text("NO checkin")
-                        
+                        Text("NO Todo")
+                        .foregroundColor(darkMode ? Color.white : Color.black)
+                        .font(.custom("Lora-Regular", size: 15))
+
                             }
                 
                 
@@ -110,9 +122,17 @@ struct CheckinSortedListView3: View {
                 
                 
                 Text("Done Todos 3 days")
-                
+                    .foregroundColor(darkMode ? Color.white : Color.black)
+                    .font(.custom("Lora-Regular", size: 25))
+
+                    .fontWeight(.medium)
+
                 if isEmpty2 == true{
-                    Text("NO checkin")
+                    Text("NO Todo")
+                        .foregroundColor(darkMode ? Color.white : Color.black)
+                        .font(.custom("Lora-Regular", size: 15))
+
+
                 }
                 
                 

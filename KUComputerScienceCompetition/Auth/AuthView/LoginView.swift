@@ -37,10 +37,19 @@ struct LoginView: View {
                 .edgesIgnoringSafeArea(.all)
                 .overlay(
                     VStack{
-                        //image
-                        Image("Logo3")
-                            .resizable()
-                            .scaledToFill()
+                       
+                        
+                        
+                        Text("Sign In")
+                            .font(.custom("Lora-Regular", size: 35))
+
+                            .fontWeight(.medium)
+
+                           
+                        Image("")
+                        
+                        
+                        
                             .frame(width:50, height: 100)
                         
                         
@@ -78,6 +87,7 @@ struct LoginView: View {
                                 Spacer()
                                 Text("Forgot Password?")
                                     .foregroundColor(.blue)
+                                    .font(.custom("Lora-Regular", size: 18))
                                     .fontWeight(.bold)
                                 
                             }
@@ -112,6 +122,8 @@ struct LoginView: View {
                             HStack{
                                 Text("SIGN IN")
                                     .fontWeight(.semibold)
+                                    .font(.custom("Lora-Regular", size: 20))
+
                                 Image(systemName:"arrow.right")
                             }
                             .foregroundColor(.white)
@@ -132,14 +144,19 @@ struct LoginView: View {
                                 .navigationBarBackButtonHidden(true)
                             
                         } label: {HStack(spacing: 3){
-                            Text("Don't have an account?")
+                            Text("Already have an account?")
                                 .foregroundColor(.white)
-                            Text("Sign up")
+                                .font(.custom("Lora-Regular", size: 18))
+                                .fontWeight(.medium)
+
+                            Text("Sign In")
                                 .foregroundColor(.white)
+                                .foregroundColor(.white)
+                                .font(.custom("Lora-Regular", size: 18))
+                              
                                 .fontWeight(.bold)
                             
                         }
-                        .font(.system(size:18))
                         
                             
                         }

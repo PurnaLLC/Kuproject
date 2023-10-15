@@ -22,12 +22,32 @@ struct RegistrationView: View {
         Color("Logoblue")
             .edgesIgnoringSafeArea(.all)
             .overlay(
+                
+                
+                
         VStack{
-            //image
-     
-            //form fields
-            //email
+       
+            
+            
             VStack(spacing: 24) {
+                
+                
+                
+                Text("Sign Up")
+                    .font(.custom("Lora-Regular", size: 35))
+                    .fontWeight(.medium)
+
+                    .padding(.top, -10)
+
+
+                Image("")
+                
+                
+                
+                    .frame(width:50, height: 100)
+                
+                
+                
                 InputView(text: $email,
                           title: "Email Address",
                           placeholder: "name@example.com")
@@ -79,6 +99,8 @@ struct RegistrationView: View {
                 HStack{
                     Text("SIGN UP")
                         .fontWeight(.semibold)
+                        .font(.custom("Lora-Regular", size: 20))
+
                     Image(systemName:"arrow.right")
                 }
                 .foregroundColor(.white)
@@ -97,11 +119,17 @@ struct RegistrationView: View {
             } label: {HStack(spacing: 3){
                 Text("Already have an account?")
                     .foregroundColor(.white)
+                    .font(.custom("Lora-Regular", size: 18))
+                    .fontWeight(.medium)
+
                 Text("Sign In")
                     .foregroundColor(.white)
+                    .foregroundColor(.white)
+                    .font(.custom("Lora-Regular", size: 18))
+                  
                     .fontWeight(.bold)
             }
-            .font(.system(size:18))
+      
                 
                 
                 }

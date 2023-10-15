@@ -12,6 +12,11 @@ struct ContentsView: View {
     let getUserDataTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     @StateObject var newtworkManager = NetworkManager()
+    
+    @StateObject var vm = CheckInViewModel(ds: FirebaseDataService())
+
+    
+    
 
     var body: some View {
         Group {
@@ -19,7 +24,11 @@ struct ContentsView: View {
                 
                 if viewModel.userSession != nil {
                     
-                    Home()
+                               Home(messageInt: vm)
+                    
+
+                    
+
                     
                 } else {
                     LoginView()
@@ -37,6 +46,7 @@ struct ContentsView: View {
         }
       
     }
+    
 }
 
 

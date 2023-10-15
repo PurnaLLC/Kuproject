@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "34E9C12C-BBCC-4340-84B3-F5D627263BCB"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KUComputerScienceCompetition/AI Chat/AIChatViewModel.swift"
@@ -87,7 +87,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "BDD24063-D3C2-42B9-8323-1A0C06420BA6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KUComputerScienceCompetition/AI Chat/AIChatViewModel.swift"
@@ -369,79 +369,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6FC2F001-6E60-400C-8E4C-37CA905F9F15"
+            uuid = "C286043F-9B59-4CB1-9528-270001022938"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KUComputerScienceCompetition/ContentView.swift"
+            filePath = "KUComputerScienceCompetition/AI Chat/AIChatViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A810BAE1-D616-4F6D-98F4-6A68C15C3DF5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KUComputerScienceCompetition/TabView/Home.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F397F93-6BC9-4A72-AFA6-268CEB676C43"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "367"
-            endingLineNumber = "367"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "parseStreamData(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2F397F93-6BC9-4A72-AFA6-268CEB676C43 - aa95f8c91626babc"
+                  uuid = "C286043F-9B59-4CB1-9528-270001022938 - 96ded633fafb4350"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (KUComputerScienceCompetition.NCCheckIn) -&gt; () in closure #1 () -&gt; KUComputerScienceCompetition.NCEditCheckinView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, KUComputerScienceCompetition.NCEditCheckinView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in KUComputerScienceCompetition.NCFormatedTodoCompleteView.body.getter : some"
+                  symbolName = "closure #3 (Swift.String) -&gt; Swift.Optional&lt;KUComputerScienceCompetition.ChatStreamCompletionResponse&gt; in KUComputerScienceCompetition.AIChatViewModel.parseStreamData(Swift.String) -&gt; Swift.Array&lt;KUComputerScienceCompetition.ChatStreamCompletionResponse&gt;"
                   moduleName = "KUComputerScienceCompetition"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/No%20Wifi%20Connection/NCCheckins/NCCheckinsView.swift"
+                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/AI%20Chat/AIChatViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "365"
-                  endingLineNumber = "365"
-                  offsetFromSymbolStart = "100">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "168">
                </Location>
                <Location
-                  uuid = "2F397F93-6BC9-4A72-AFA6-268CEB676C43 - aa95f8c91626bb7e"
+                  uuid = "C286043F-9B59-4CB1-9528-270001022938 - 96ded633fafb4350"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (KUComputerScienceCompetition.NCCheckIn) -&gt; () in closure #1 () -&gt; KUComputerScienceCompetition.NCEditCheckinView in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.NavigationLink&lt;&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, KUComputerScienceCompetition.NCEditCheckinView&gt;, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in KUComputerScienceCompetition.NCFormatedTodoCompleteView.body.getter : some"
+                  symbolName = "closure #3 (Swift.String) -&gt; Swift.Optional&lt;KUComputerScienceCompetition.ChatStreamCompletionResponse&gt; in KUComputerScienceCompetition.AIChatViewModel.parseStreamData(Swift.String) -&gt; Swift.Array&lt;KUComputerScienceCompetition.ChatStreamCompletionResponse&gt;"
                   moduleName = "KUComputerScienceCompetition"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/No%20Wifi%20Connection/NCCheckins/NCCheckinsView.swift"
+                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/AI%20Chat/AIChatViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "367"
-                  endingLineNumber = "367"
-                  offsetFromSymbolStart = "148">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "324">
+               </Location>
+               <Location
+                  uuid = "C286043F-9B59-4CB1-9528-270001022938 - 96ded633fafb4350"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.String) -&gt; Swift.Optional&lt;KUComputerScienceCompetition.ChatStreamCompletionResponse&gt; in KUComputerScienceCompetition.AIChatViewModel.parseStreamData(Swift.String) -&gt; Swift.Array&lt;KUComputerScienceCompetition.ChatStreamCompletionResponse&gt;"
+                  moduleName = "KUComputerScienceCompetition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/AI%20Chat/AIChatViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "632">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -449,17 +432,161 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2C87744E-3B62-4A42-BFAB-330CF7AC75BD"
+            uuid = "95A03DFA-D9C1-4F6D-A1BB-8BDF2CCEDF21"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsView.swift"
+            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "update(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5CDF615-EC1B-4BB0-91BA-6345383F1B3F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "save(items:key:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F5CDF615-EC1B-4BB0-91BA-6345383F1B3F - 7d09a9f033302467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KUComputerScienceCompetition.NCUserDefaultDataService.save&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_0: Swift.Identifiable&gt;(items: Swift.Array&lt;&#x3c4;_0_0&gt;, key: Swift.String) -&gt; ()"
+                  moduleName = "KUComputerScienceCompetition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/No%20Wifi%20Connection/NCCheckins/NCCheckinsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "F5CDF615-EC1B-4BB0-91BA-6345383F1B3F - 7d09a9f033302467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KUComputerScienceCompetition.NCUserDefaultDataService.save&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_0: Swift.Identifiable&gt;(items: Swift.Array&lt;&#x3c4;_0_0&gt;, key: Swift.String) -&gt; ()"
+                  moduleName = "KUComputerScienceCompetition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/No%20Wifi%20Connection/NCCheckins/NCCheckinsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "316">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD2DFD53-751E-49BE-96D5-1AFCD3E70AE1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "save(items:key:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8D53011-B771-41AC-BCF7-1FE58708B7E5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "save(items:key:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A8D53011-B771-41AC-BCF7-1FE58708B7E5 - 7d09a9f033302467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KUComputerScienceCompetition.NCUserDefaultDataService.save&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_0: Swift.Identifiable&gt;(items: Swift.Array&lt;&#x3c4;_0_0&gt;, key: Swift.String) -&gt; ()"
+                  moduleName = "KUComputerScienceCompetition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/No%20Wifi%20Connection/NCCheckins/NCCheckinsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "A8D53011-B771-41AC-BCF7-1FE58708B7E5 - 7d09a9f033302467"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KUComputerScienceCompetition.NCUserDefaultDataService.save&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable, &#x3c4;_0_0: Swift.Identifiable&gt;(items: Swift.Array&lt;&#x3c4;_0_0&gt;, key: Swift.String) -&gt; ()"
+                  moduleName = "KUComputerScienceCompetition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxwellmeyer/Desktop/KUComputerScienceCompetition/KUComputerScienceCompetition/No%20Wifi%20Connection/NCCheckins/NCCheckinsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "316">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "93FDC6DF-FE4D-4BEB-9301-A07A0A346D13"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "load(key:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56ABEF7D-51BC-4E3E-B70E-05B5CB5DAB48"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KUComputerScienceCompetition/No Wifi Connection/NCCheckins/NCCheckinsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "load(key:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

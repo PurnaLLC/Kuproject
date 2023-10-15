@@ -20,6 +20,7 @@ struct ProfileView: View {
 
     @AppStorage("streak") var streak = 0
     
+
     
     
     var body: some View {
@@ -35,6 +36,7 @@ struct ProfileView: View {
                 HStack {
                     HStack{
                         Image(systemName: "person.circle.fill")
+                            .foregroundColor(darkMode ? Color.white : Color.black)
                             .font(.system(size: 50))
                         
                         
@@ -42,14 +44,12 @@ struct ProfileView: View {
                         
                         VStack (alignment: .leading, spacing:4){
                             Text(user.email)
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                                .font(.custom("Lora-Regular", size: 15))
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                                 .padding(.top,4)
                             
-                            
-                            VStack(alignment: .center){
-                                
-                            }
                             
                             
                         }
@@ -66,12 +66,13 @@ struct ProfileView: View {
                             
                             viewModel.signOut()
                             
-                        
+                            
                             
                         } label: {
-              
-                           
+                            
+                            
                             Label("Sign Out", systemImage: "arrow.left.circle.fill")
+                            
                         }
                         
                         
@@ -124,10 +125,10 @@ struct ProfileView: View {
                         }
                         
                     } label: {
-                       
-                         Image(systemName: "gearshape.fill")
-                            .foregroundColor(.black)
-                        .frame(width:100, height: 100)
+                        
+                        Image(systemName: "gearshape.fill")
+                            .font(.system(size: 25))
+                            .foregroundColor(darkMode ? Color.white : Color.black)
                         
                     }
                     
@@ -135,30 +136,73 @@ struct ProfileView: View {
                     
                 }
                 
-         
                 
-                Toggle(isOn: $darkMode){
-                    
-                    Text("Dark Mode")
-                    
-                        .foregroundColor(darkMode ? Color.white : Color.black)
+                .padding(.bottom, 15)
 
+                
+                VStack{
                     
+                    Toggle(isOn: $darkMode){
+                        
+                        Text("Dark Mode")
+                        
+                            .foregroundColor(darkMode ? Color.white : Color.black)
+                            .font(.custom("Lora-Regular", size: 30))
+                            .bold()
+
+                        
+                        
+                        
+                        
+                    }
                 }
                 
-                ZStack{
-                  
+                .padding(.leading, 5)
+                .padding(.trailing, 15)
+                
+                
+                .padding(.bottom, 15)
+                
+                VStack{
+                    
+                    Text("Todos Done On Time ")
+                        .foregroundColor(darkMode ? Color.white : Color.black)
+                        .font(.custom("Lora-Regular", size: 30))
+                        .bold()
+                    
+                    
+                    ZStack{
+                        
+                        
                         Text(fire)
                             .font(.system(size: 150))
                         
-                            Text("\(streak)")
-                                .font(.system(size: 50))
-                                .padding(.bottom, -100)
+                        Text("\(streak)")
+                            .font(.system(size: 50))
+                            .padding(.bottom, -100)
+                            
                         
-                    
+                    }
                 }
-            }
                 
+            }
+            
+            .frame(
+                  minWidth: 0,
+                  maxWidth: .infinity,
+                  minHeight: 0,
+                  maxHeight: .infinity,
+                  alignment: .topLeading
+                )
+
+            
+            
+                
+            
+            .background(darkMode ? Color.black : Color.white)
+
+            
+            
             
         }
         

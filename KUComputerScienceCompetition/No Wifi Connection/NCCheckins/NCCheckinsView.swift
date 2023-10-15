@@ -48,8 +48,7 @@ struct NCCheckinsView: View {
         @AppStorage("theme") var darkMode = false
         
         
-        
-        
+    
         
         
         @StateObject var vmView = NCCheckInViewModel(ds: NCUserDefaultDataService())
@@ -66,6 +65,8 @@ struct NCCheckinsView: View {
         
         @StateObject var newtworkManager = NetworkManager()
         
+
+    
         
         var body: some View {
        
@@ -78,21 +79,33 @@ struct NCCheckinsView: View {
                 
                 VStack {
                     
+                    Text("Sort")
+                        .foregroundColor(darkMode ? Color.white : Color.black)
+                        .font(.custom("Lora-Regular", size: 20))
+                        .bold()
+                    
+
+
+                    
                     Text("Not Connected")
                     
                     
                     
+                    VStack{
+                    
                     
                     Picker("Sort By", selection: $sortingOption) {
                         ForEach(SortingOption.allCases, id: \.self) { option in
-                            
                             Text(option.rawValue)
-                            
                         }
                     }
-                    .pickerStyle(SegmentedPickerStyle())
-                    .padding()
                     
+                        
+                        
+                    .pickerStyle(SegmentedPickerStyle())
+                              .foregroundColor(darkMode ? Color.white : Color.black)
+                          }
+                          .preferredColorScheme(darkMode ? .dark : .light)
                     
                     
                     VStack{
@@ -104,6 +117,13 @@ struct NCCheckinsView: View {
                             VStack{
                                 Text("Todo" )
                                     .foregroundColor(darkMode ? Color.white : Color.black)
+                                   
+                                    .font(.custom("Lora-Regular", size: 25))
+                                    .bold()
+                                    .multilineTextAlignment(.leading)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 5)
+
                                 
                                 
                             }
@@ -111,7 +131,8 @@ struct NCCheckinsView: View {
                             if isEmpty == true{
                                 Text("NO checkin")
                                     .foregroundColor(darkMode ? Color.white : Color.black)
-                                
+                                    .font(.custom("Lora-Regular", size: 16))
+
                                 
                             }
                             
@@ -122,39 +143,227 @@ struct NCCheckinsView: View {
                             
                             ForEach(sortedNCCheckins) { checkin in
                                 if checkin.iscompleted == false{
+                                    
                                   
-                                
+                                  
+                                    HStack{
+                                        
+                                        
+                                        HStack{
+                                            NavigationLink {
+                                                NCEditCheckinView(checkin: checkin) { returnedCheckIn in
+                                                    vm.update(checkin: returnedCheckIn)
+                                                    
+                                                }
+                                                
+                                            } label: {
+                                                
+                                                HStack{
+                                                    Text("\(checkin.name) \(checkin.formattedDate())")
+                                                        .font(Font.headline.weight(.semibold))
+
+                                                        .foregroundColor( Color.black)
+                                                        .font(.custom("Lora-Regular", size: 20))
+                                                        
+                                                    
+                                                    
+                                                        .lineLimit(1)
+                                                        .minimumScaleFactor(0.00000000001)
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                                    
+                                                    
+                                                    
+                                                    
+                                                }
+                                                .padding(.leading, 5)
+                                                
+                                                
+                                            }
+                                            
+                                            HStack{
+                                                
+                                                Menu {
+                                                    Button(role: .destructive) {
+                                                        
+                                                        vm.delete(checkin: checkin)
+                                                        
+                                                        
+                                                    } label: {
+                                                        Image(systemName: "trash")
+                                                            .resizable()
+                                                            .frame(width: 24, height: 24)
+                                                            .foregroundColor(.red)
+                                                            .cornerRadius(10)
+                                                            .multilineTextAlignment(.center)
+                                                        Text("Delete Todo")
+                                                        
+                                                        
+                                                    }
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                } label: {
+                                                    Image(systemName: "trash")
+                                                        .resizable()
+                                                        .frame(width: 24, height: 24)
+                                                        .shadow(color: .gray, radius: 2, x: 2, y: 1)
+
+                                                        .foregroundColor(.black)
+                                                        .cornerRadius(10)
+                                                        .multilineTextAlignment(.center)
+                                                    
+                                                    
+                                                }
+                                            }
+                                            .frame(maxWidth: 120, alignment: .trailing)
+                                            .padding(.trailing, 10)
+                                            
+                                                
+                                            
                                     
-                                    
-                                    NCTodoFormatedView(checkin: checkin, vm: vmView)
+                                        }
+                                        .frame(width: 350, height: 50)
+                                        .background(Color.logoBlue)
+                                        
+                                        
+                                        .cornerRadius(10)
+                                        
+                                        
                                         .onAppear{
                                             isEmpty = false
                                         }
+                                        
+                                    }
+                                    .shadow(color: Color.gray, radius: 3, x: 3, y: 4)
+
+                                    .padding(.bottom, 5)
+
                                     
                                 }
                             }
                             
                             
                             Text("Done")
-                            
                                 .foregroundColor(darkMode ? Color.white : Color.black)
+                               
+                                .font(.custom("Lora-Regular", size: 25))
+                                .bold()
+                                .multilineTextAlignment(.leading)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.leading, 5)
+
                             
                             if isEmpty2 == true{
                                 Text("NO checkin")
                                     .foregroundColor(darkMode ? Color.white : Color.black)
-                                
+                                    .font(.custom("Lora-Regular", size: 16))
+
                             }
                             
                             
                             ForEach(sortedNCCheckins) { checkin in
                                 if checkin.iscompleted == true{
                                     
-                                    
-                                        NCFormatedTodoCompleteView(vm: vmView, checkin: checkin)
-                                            .onAppear{
-                                                isEmpty2 = false
+                                    HStack{
+                                        HStack{
+                                            NavigationLink {
+                                                NCEditCheckinView(checkin: checkin) { returnedCheckIn in
+                                                    vm.update(checkin: returnedCheckIn)
+                                                }
+                                                
+                                                
+                                            } label: {
+                                                
+                                                HStack{
+                                                    Text("\(checkin.name) \(checkin.formattedDate())")
+                                                        .font(Font.headline.weight(.semibold))
+
+                                                        .foregroundColor(darkMode ? Color.white : Color.black)
+                                                        .font(.custom("Lora-Regular", size: 20))
+                                                        
+                                                    
+                                                    
+                                                        .lineLimit(1)
+                                                        .minimumScaleFactor(0.00000000001)
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                }
+                                                .padding(.leading, 5)
+                                                
+                                                
                                             }
+                                            
+                                            HStack{
+                                                
+                                                Menu {
+                                                    Button(role: .destructive) {
+                                                        
+                                                        vm.delete(checkin: checkin)
+                                                        
+                                                        
+                                                    } label: {
+                                                        Image(systemName: "trash")
+                                                            .resizable()
+                                                            .frame(width: 24, height: 24)
+                                                            .foregroundColor(.red)
+                                                            .cornerRadius(10)
+                                                            .multilineTextAlignment(.center)
+                                                        Text("Delete Todo")
+                                                        
+                                                        
+                                                    }
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    
+                                                } label: {
+                                                    Image(systemName: "trash")
+                                                        .resizable()
+                                                        .frame(width: 24, height: 24)
+                                                        .shadow(color: .gray, radius: 2, x: 2, y: 1)
+
+                                                        .foregroundColor(.black)
+                                                        .cornerRadius(10)
+                                                        .multilineTextAlignment(.center)
+                                                    
+                                                    
+                                                }
+                                            }
+                                            .frame(maxWidth: 120, alignment: .trailing)
+                                            .padding(.trailing, 10)
+                                            
+                                            
+                                            
+                                            
+                                        }
+                                        .frame(width: 350, height: 50)
+                                        .background(checkin.ontime ? Color.green : Color.red)
                                         
+                                        
+                                        .cornerRadius(10)
+                                        
+                                        
+                                        .onAppear{
+                                            isEmpty2 = false
+                                        }
+                                        
+                                    }
+                                    
+
+                                       
+                                    .shadow(color: Color.gray, radius: 3, x: 3, y: 4)
+                                    
+                                    .padding(.bottom, 5)
+
+                                    
+                                    
                                     
                                     
                                     
@@ -180,11 +389,22 @@ struct NCCheckinsView: View {
                             
                         } label: {
                             
+                            HStack{
+                                Text("Add")
+                                    .foregroundColor(darkMode ? Color.white : Color.black)
+                                    .font(.custom("Lora-Regular", size: 25))
+
+                                
+                            }
+                            .frame(width: 80, height: 50)
+                            
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 6)
+                                    .stroke(darkMode ? Color.white : Color.black, lineWidth: 2)
+                            )
                             
                             
-                            Text("Add")
-                                .foregroundColor(darkMode ? Color.white : Color.black)
-                            
+                            .padding(.bottom, 5)
                             
                         }
                         
@@ -192,27 +412,7 @@ struct NCCheckinsView: View {
                         
                         
                         
-                        
-                        
-                        NavigationLink {
-                            
-                            
-                            if newtworkManager.isConnected{
-                                
-                                
-                                
-                                
-                            }else{
-                                NotConnectedAI()
-                            }
-                            
-                            
-                        } label: {
-                            
-                            Text("AI")
-                                .foregroundColor(darkMode ? Color.white : Color.black)
-
-                        }
+                 
                         
                     }
                     
@@ -252,190 +452,6 @@ struct NCCheckinsView: View {
 }
 
 
-
-
-
-
-
-struct NCTodoFormatedView: View {
-    
-    @State  var checkin: NCCheckIn
-    
-    
-    @ObservedObject var vm: NCCheckInViewModel
-    
-    
-    var body: some View {
-        
-        
-        HStack{
-            NavigationLink {
-                NCEditCheckinView(checkin: checkin) { returnedCheckIn in
-                    vm.update(checkin: returnedCheckIn)
-
-                }
-                
-            } label: {
-                
-                HStack{
-                    Text("\(checkin.name) \(checkin.formattedDate())")
-                        .foregroundColor(.black)
-                        .bold()
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.00000000001)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    
-                    
-                    
-                }
-                .padding(.leading, 5)
-                
-                
-            }
-            
-            HStack{
-                
-                Menu {
-                    Button(role: .destructive) {
-                        
-                //        vm.delete()
-                        
-                        
-                    } label: {
-                        Image(systemName: "trash")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(.red)
-                            .cornerRadius(10)
-                            .multilineTextAlignment(.center)
-                        Text("Delete Todo")
-                        
-                        
-                    }
-                    
-                    
-                    
-                    
-                    
-                } label: {
-                    Image(systemName: "trash")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
-                        .multilineTextAlignment(.center)
-                    
-                    
-                }
-            }
-            .frame(maxWidth: 120, alignment: .trailing)
-            .padding(.trailing, 10)
-            
-            
-            
-            
-        }
-        .frame(width: 350, height: 50)
-        .background(Color.blue)
-        
-        
-        .cornerRadius(10)
-        
-        
-    }
-}
-
-
-
-
-
-
-struct NCFormatedTodoCompleteView: View {
-    
-    
-    @ObservedObject var vm: NCCheckInViewModel
-
-    
-    
-    @State var checkin: NCCheckIn
-    var body: some View {
-
-        HStack{
-            NavigationLink {
-                NCEditCheckinView(checkin: checkin) { returnedCheckIn in
-                    vm.update(checkin: returnedCheckIn)
-                }
-            } label: {
-                
-                HStack{
-                    Text("\(checkin.name) \(checkin.formattedDate())")
-                        .foregroundColor(.black)
-                        .bold()
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.00000000001)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    
-                    
-                    
-                }
-                .padding(.leading, 5)
-                
-                
-            }
-            
-            HStack{
-                
-                Menu {
-                    Button(role: .destructive) {
-                        
-                      //      vm.delete()
-                        
-                        
-                    } label: {
-                        Image(systemName: "trash")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(.red)
-                            .cornerRadius(10)
-                            .multilineTextAlignment(.center)
-                        Text("Delete Todo")
-                        
-                        
-                    }
-                    
-                    
-                    
-                    
-                    
-                } label: {
-                    Image(systemName: "trash")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
-                        .multilineTextAlignment(.center)
-                    
-                    
-                }
-            }
-            .frame(maxWidth: 120, alignment: .trailing)
-            .padding(.trailing, 10)
-            
-            
-            
-            
-        }
-        .frame(width: 350, height: 50)
-        .background(checkin.ontime ? Color.green : Color.red)
-        
-        
-        .cornerRadius(10)
-        
-
-    }
-}
 
 
 

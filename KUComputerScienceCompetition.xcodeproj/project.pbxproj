@@ -62,6 +62,8 @@
 		3069A96A2A9F98CB00E96C79 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 3069A9692A9F98CB00E96C79 /* FirebaseStorageCombine-Community */; };
 		3069A9702A9F9ABC00E96C79 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 3069A96F2A9F9ABC00E96C79 /* GoogleSignIn */; };
 		3069A9722A9F9ABC00E96C79 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3069A9712A9F9ABC00E96C79 /* GoogleSignInSwift */; };
+		3077CAEB2ADBA2A30061C897 /* NotConnectedProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3077CAEA2ADBA2A30061C897 /* NotConnectedProfile.swift */; };
+		3077CAED2ADBA8DB0061C897 /* Lora-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3077CAEC2ADBA8DB0061C897 /* Lora-VariableFont_wght.ttf */; };
 		30944F862AD8BA4600BE925F /* NCCheckins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F852AD8BA4600BE925F /* NCCheckins.swift */; };
 		30944F892AD8BAA600BE925F /* NCCheckinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F882AD8BAA600BE925F /* NCCheckinsView.swift */; };
 		30944F8B2AD8BACA00BE925F /* NCCheckinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */; };
@@ -107,6 +109,9 @@
 		3069A92B2A9F979800E96C79 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3069A9322A9F982D00E96C79 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3069A9732A9F9BA700E96C79 /* KUComputerScienceCompetition.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KUComputerScienceCompetition.entitlements; sourceTree = "<group>"; };
+		3077CAE82ADA3EBD0061C897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3077CAEA2ADBA2A30061C897 /* NotConnectedProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotConnectedProfile.swift; sourceTree = "<group>"; };
+		3077CAEC2ADBA8DB0061C897 /* Lora-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		30944F852AD8BA4600BE925F /* NCCheckins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckins.swift; sourceTree = "<group>"; };
 		30944F882AD8BAA600BE925F /* NCCheckinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckinsView.swift; sourceTree = "<group>"; };
 		30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckinsViewModel.swift; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 			children = (
 				3046064E2ACD12AC00452DEE /* NotConnected.swift */,
 				304606502ACD159700452DEE /* NotConnectedAI.swift */,
+				3077CAEA2ADBA2A30061C897 /* NotConnectedProfile.swift */,
 				30944F872AD8BA7A00BE925F /* NCCheckins */,
 			);
 			path = "No Wifi Connection";
@@ -207,7 +213,9 @@
 		3069A9232A9F979700E96C79 /* KUComputerScienceCompetition */ = {
 			isa = PBXGroup;
 			children = (
+				3077CAE82ADA3EBD0061C897 /* Info.plist */,
 				3069A9732A9F9BA700E96C79 /* KUComputerScienceCompetition.entitlements */,
+				3077CAE62ADA3CB10061C897 /* Font */,
 				3069A96B2A9F9A5200E96C79 /* Components */,
 				3069A96C2A9F9A6100E96C79 /* Views and ViewModels */,
 				30B0370B2AA63B5300BA25D5 /* DataService */,
@@ -318,6 +326,14 @@
 				30B037182AA802C900BA25D5 /* CheckInListView.swift */,
 			);
 			path = DailyCheckUp;
+			sourceTree = "<group>";
+		};
+		3077CAE62ADA3CB10061C897 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				3077CAEC2ADBA8DB0061C897 /* Lora-VariableFont_wght.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		30944F872AD8BA7A00BE925F /* NCCheckins */ = {
@@ -447,6 +463,7 @@
 				3069A92C2A9F979800E96C79 /* Preview Assets.xcassets in Resources */,
 				3069A9332A9F982D00E96C79 /* GoogleService-Info.plist in Resources */,
 				3069A9292A9F979800E96C79 /* Assets.xcassets in Resources */,
+				3077CAED2ADBA8DB0061C897 /* Lora-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +491,7 @@
 				3060FF052AC46F7000CBE117 /* OpenAIService.swift in Sources */,
 				3060FF212ACB293C00CBE117 /* CheckinSortedListView2.swift in Sources */,
 				302EEBB22AA8EBE4005F81AB /* ChatInListModel.swift in Sources */,
+				3077CAEB2ADBA2A30061C897 /* NotConnectedProfile.swift in Sources */,
 				3046064F2ACD12AC00452DEE /* NotConnected.swift in Sources */,
 				3069A9252A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift in Sources */,
 				30B037132AA7F86E00BA25D5 /* InputView.swift in Sources */,
@@ -625,6 +643,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"KUComputerScienceCompetition/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KUComputerScienceCompetition/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -654,6 +673,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"KUComputerScienceCompetition/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = KUComputerScienceCompetition/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

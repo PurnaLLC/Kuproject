@@ -9,15 +9,11 @@ import SwiftUI
 
 struct NCCreateTodo: View {
     
+    
+    
         @State var checkin: NCCheckIn
         var save: (NCCheckIn)->()
         @Environment(\.dismiss) var dismiss
-        
-        @State private var streak: Int = 0
-        @State private var lastCheckedDate: Date?
-        
-        
-        
         
         var body: some View {
             

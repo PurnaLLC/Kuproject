@@ -18,7 +18,7 @@ struct InputView: View {
     var body: some View {
         VStack (alignment: .leading, spacing: 12){
             Text(title)
-                .font(.system(size: 18))
+                .font(.custom("Lora-Regular", size: 18))
                 .foregroundColor(Color(.black))
                 .fontWeight(.semibold)
                 .font(.footnote)
@@ -27,12 +27,12 @@ struct InputView: View {
             
             if isSecureField{
                 SecureField(placeholder, text: $text)
-                    .font(.system(size: 16))
+                    .font(.custom("Lora-Regular", size: 16))
                     .textContentType(.username)
                    
             }else{
                 TextField(placeholder, text: $text)
-                    .font(.system(size: 16))
+                    .font(.custom("Lora-Regular", size: 16))
                     .fontWeight(.semibold)
                     .textContentType(.username)
                     

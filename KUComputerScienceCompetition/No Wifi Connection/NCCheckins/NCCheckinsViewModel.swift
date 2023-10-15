@@ -11,6 +11,7 @@ import Combine
 
 // ViewModel
 class NCCheckInViewModel: ObservableObject {
+    
     @Published private(set) var ncCheckins: [NCCheckIn] = []
 
     
@@ -39,8 +40,8 @@ class NCCheckInViewModel: ObservableObject {
     
     
     
-    func delete(indexSet: IndexSet) {
-        ds.delete(indexSet: indexSet)
+    func delete(checkin: NCCheckIn) {
+        ds.delete(checkIn: checkin)
     }
     
 
@@ -58,7 +59,7 @@ protocol NCDataService: ObservableObject {
     func get() -> AnyPublisher<[NCCheckIn], Error>
     func add(_ checkin: NCCheckIn)
     func update(_ checkin: NCCheckIn)
-    func delete(indexSet: IndexSet)
+    func delete(checkIn: NCCheckIn)
 
 }
 
@@ -74,7 +75,7 @@ class NCUserDefaultDataService: NCDataService {
     private var key = "NotConnectedDATAS"
     init(){
         NCcheckins = []
-        NCcheckins = load(key: key)
+        NCcheckins = load(key: "NotConnectedDATAS")
     }
     func get() -> AnyPublisher<[NCCheckIn], Error> {
         $NCcheckins.tryMap({$0}).eraseToAnyPublisher()
@@ -89,10 +90,12 @@ class NCUserDefaultDataService: NCDataService {
         NCcheckins[index] = item
     }
     
-    func delete(indexSet: IndexSet) {
-        NCcheckins.remove(atOffsets: indexSet)
+    func delete(checkIn: NCCheckIn) {
+        if let index = NCcheckins.firstIndex(where: { $0.id == checkIn.id }) {
+            NCcheckins.remove(at: index)
+        }
     }
-    
+
     // MARK: Private
      func save<T: Identifiable & Codable> (items: [T], key: String) {
         
@@ -104,6 +107,9 @@ class NCUserDefaultDataService: NCDataService {
             defaults.set(encoded, forKey: key)
         }
     }
+    
+
+
     func load<T: Identifiable & Codable> (key: String) -> [T] {
         guard let data = UserDefaults.standard.object (forKey: key) as? Data else {
             
@@ -124,3 +130,5 @@ class NCUserDefaultDataService: NCDataService {
     }
     
 }
+
+

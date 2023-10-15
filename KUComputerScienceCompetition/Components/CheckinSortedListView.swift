@@ -15,7 +15,7 @@ struct CheckinSortedListView: View {
     
     
     
-    @State private var isShowingMenu = true
+    @State private var isShowingMenu = false
     
     @State private var isEmpty: Bool = true
     @State private var isEmpty2: Bool = true
@@ -102,19 +102,21 @@ struct CheckinSortedListView: View {
                            HStack{
                                
                                HStack{
-                                   Button {
-                                       isPresentingSheet = true
-
+                                   NavigationLink {
+                                  
                                        
+                                       CreateTodo(checkin: checkin) { returnedCheckIn in
+                                           vm.update(checkin: returnedCheckIn)
+                                       }
+
                                    } label: {
                                        
                                        HStack{
                                            Text("\(checkin.name) \(checkin.formattedDate())")
-                                               .font(Font.headline.weight(.semibold))
-
-                                               .foregroundColor( Color.black)
                                                .font(.custom("Lora-Regular", size: 20))
-                                               
+                                               .bold()
+                                               .foregroundColor(.black)
+
                                            
                                            
                                                .lineLimit(1)
@@ -238,18 +240,20 @@ struct CheckinSortedListView: View {
                                       
                                       HStack{
                                           HStack{
-                                              Button {
-                                                  isPresentingSheet2 = true
+                                              NavigationLink {
+                                             
                                                   
+                                                  CreateTodo(checkin: checkin) { returnedCheckIn in
+                                                      vm.update(checkin: returnedCheckIn)
+                                                  }
+
                                               } label: {
-                                                  
                                                   HStack{
                                                       Text("\(checkin.name) \(checkin.formattedDate())")
-                                                          .font(Font.headline.weight(.bold))
-
-                                                          .foregroundColor( Color.black)
                                                           .font(.custom("Lora-Regular", size: 20))
-                                  
+                                                          .bold()
+                                                          .foregroundColor(.black)
+
                                                       
                                                           .lineLimit(1)
                                                           .minimumScaleFactor(0.00000000001)

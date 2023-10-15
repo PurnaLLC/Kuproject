@@ -52,7 +52,6 @@ struct TodoListView: View {
     
     @StateObject var vmView = CheckInViewModel(ds: FirebaseDataService())
     
-    @StateObject var vmView2 = CheckInViewModel(ds: UserDefaultDataService())
     
     
     
@@ -152,106 +151,107 @@ struct TodoListView: View {
                                 
                             }else{
                                     
-                                HStack{
-                                    
+                                
                                     HStack{
-                                        Button {
-                                            isPresentingSheet = true
+                                        
+                                        HStack{
+                                            NavigationLink {
+                                                
+                                                     
+                                                     CreateTodo(checkin: checkin) { returnedCheckIn in
+                                                         vm.update(checkin: returnedCheckIn)
+                                                     }
 
-                                            
-                                        } label: {
-                                            
-                                            HStack{
-                                                Text("\(checkin.name) \(checkin.formattedDate())")
-                                                    .font(Font.headline.weight(.semibold))
-
-                                                    .foregroundColor( Color.black)
-                                                    .font(.custom("Lora-Regular", size: 20))
+                                                
+                                            } label: {
+                                                
+                                                HStack{
+                                                    Text("\(checkin.name) \(checkin.formattedDate())")
+                                                        .font(.custom("Lora-Regular", size: 20))
+                                                        .bold()
+                                                        .foregroundColor(.black)
+                                                        
                                                     
-                                                
-                                                
-                                                    .lineLimit(1)
-                                                    .minimumScaleFactor(0.00000000001)
-                                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                                
+                                                    
+                                                        .lineLimit(1)
+                                                        .minimumScaleFactor(0.00000000001)
+                                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                                    
+                                                    
+                                                    
+                                                }
+                                                .padding(.leading, 5)
                                                 
                                                 
                                             }
-                                            .padding(.leading, 5)
                                             
-                                            
-                                        }
-                                        
-                                        HStack{
-                                            
-                                            Menu {
-                                                Button(role: .destructive) {
+                                            HStack{
+                                                
+                                                Menu {
+                                                    Button(role: .destructive) {
+                                                        
+                                                        vm.delete(checkin: checkin)
+                                                        
+                                                        
+                                                    } label: {
+                                                        Image(systemName: "trash")
+                                                            .resizable()
+                                                            .frame(width: 24, height: 24)
+                                                            .foregroundColor(.red)
+                                                            .cornerRadius(10)
+                                                            .multilineTextAlignment(.center)
+                                                        Text("Delete Todo")
+                                                        
+                                                        
+                                                    }
                                                     
-                                                    vm.delete(checkin: checkin)
+                                                    
+                                                    
                                                     
                                                     
                                                 } label: {
                                                     Image(systemName: "trash")
                                                         .resizable()
                                                         .frame(width: 24, height: 24)
-                                                        .foregroundColor(.red)
+                                                        .shadow(color: .gray, radius: 2, x: 2, y: 1)
+                                                        .foregroundColor(.black)
                                                         .cornerRadius(10)
                                                         .multilineTextAlignment(.center)
-                                                    Text("Delete Todo")
                                                     
                                                     
                                                 }
-                                                
-                                                
-                                                
-                                                
-                                                
-                                            } label: {
-                                                Image(systemName: "trash")
-                                                    .resizable()
-                                                    .frame(width: 24, height: 24)
-                                                    .shadow(color: .gray, radius: 2, x: 2, y: 1)
-                                                    .foregroundColor(.black)
-                                                    .cornerRadius(10)
-                                                    .multilineTextAlignment(.center)
-                                                
-                                                
                                             }
+                                            .frame(maxWidth: 120, alignment: .trailing)
+                                            .padding(.trailing, 10)
+                                            
+                                            
+                               
+                                            
+                                            
+                                            .sheet(isPresented: $isPresentingSheet, content: {
+                                                CheckInEditView(checkin: checkin) { returnedCheckIn in
+                                                    vm.update(checkin: returnedCheckIn)
+                                                }
+                                            })
+                                            
+                                            
                                         }
-                                        .frame(maxWidth: 120, alignment: .trailing)
-                                        .padding(.trailing, 10)
+                                        .frame(width: 350, height: 50)
+                                        .background(Color.logoBlue)
+
+                                             .scaledToFill()
                                         
                                         
-                           
                                         
-                                        
-                                        .sheet(isPresented: $isPresentingSheet, content: {
-                                            CheckInEditView(checkin: checkin) { returnedCheckIn in
-                                                vm.update(checkin: returnedCheckIn)
-                                            }
-                                        })
-                                        
+                                        .cornerRadius(10)
                                         
                                     }
-                                    .frame(width: 350, height: 50)
-                                    .background(Color.logoBlue)
+                                    .shadow(color: Color.gray, radius: 3, x: 3, y: 4)
 
-                                         .scaledToFill()
+                                    .padding(.bottom, 5)
                                     
-                                    
-                                    
-                                    .cornerRadius(10)
-                                    
-                                }
-                                .shadow(color: Color.gray, radius: 3, x: 3, y: 4)
 
-                                .padding(.bottom, 5)
-                                
-                                
-                                
-                                
-                                
-                                
+                                    
                                     
                                     
                                         .onAppear{
@@ -295,18 +295,22 @@ struct TodoListView: View {
                                 
                                 HStack{
                                     HStack{
-                                        Button {
-                                            isPresentingSheet2 = true
+                                        NavigationLink {
+                                       
                                             
+                                            CreateTodo(checkin: checkin) { returnedCheckIn in
+                                                vm.update(checkin: returnedCheckIn)
+                                            }
+
                                         } label: {
                                             
                                             HStack{
                                                 Text("\(checkin.name) \(checkin.formattedDate())")
-                                                    .font(Font.headline.weight(.bold))
-
-                                                    .foregroundColor( Color.black)
                                                     .font(.custom("Lora-Regular", size: 20))
-                            
+                                                    .bold()
+
+                                                    .foregroundColor(.black)
+
                                                 
                                                     .lineLimit(1)
                                                     .minimumScaleFactor(0.00000000001)
@@ -364,7 +368,7 @@ struct TodoListView: View {
                                         
                                     }
                                     
-                                    .sheet(isPresented: $isPresentingSheet2, content: {
+                                    .sheet(isPresented: $isPresentingSheet, content: {
                                         CheckInEditView(checkin: checkin) { returnedCheckIn in
                                             vm.update(checkin: returnedCheckIn)
                                         }
@@ -441,9 +445,10 @@ struct TodoListView: View {
                         
                         HStack{
                             Text("Add")
-                                .foregroundColor(darkMode ? Color.white : Color.black)
                                 .font(.custom("Lora-Regular", size: 25))
                                 .fontWeight(.medium)
+                                .foregroundColor(darkMode ? Color.white : Color.black)
+                              
 
                                 
                         }

@@ -33,6 +33,67 @@ struct CreateTodo: View {
                     Text("Started Date: \(checkin.formattedDate())")
                     
                     
+                        
+                        
+                    VStack(alignment: .center){
+                    
+                        
+                        HStack{
+                            if checkin.iscompleted{
+                                Text("")
+                            }else{
+                                Text("Mark As Done")
+                            }
+                            
+                            Button {
+                                
+                                
+                                checkin.iscompleted.toggle()
+                                
+                                
+                                if checkin.tododate > Date(){
+                                    
+                                    checkin.ontime = true
+                                }else{
+                                    checkin.ontime = false
+                                    
+                                }
+                                
+                                
+                                
+                                
+                                
+                            } label: {
+                                
+                                VStack{
+                                    Image(systemName: "checkmark.circle")
+                                    
+                                        .font(.title2)
+                                     
+                                        .foregroundColor(checkin.iscompleted ? Color.green : Color.red)
+                                        .padding(.horizontal, 18)
+                                        .padding(.vertical, 8)
+                                        .frame(width: 30, height: 30)
+                                        
+                                        
+                                }
+                                
+                            }
+                            
+                            
+                            
+                        }
+                        
+                        
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                        
+                        
+                        
+                        
+                        
+                        
+                    }
                     VStack {
                         DatePicker("Finished By", selection: $checkin.tododate, in: Date()..., displayedComponents: .date)
                         

@@ -16,6 +16,7 @@ struct InputView: View {
     var isSecureField = false
     
     var body: some View {
+        
         VStack (alignment: .leading, spacing: 12){
             Text(title)
                 .font(.custom("Lora-Regular", size: 18))

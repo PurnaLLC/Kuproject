@@ -27,6 +27,16 @@ class OpenAIService {
     }
     
    
+    func sendStreamMessage(messages: [Message]) -> DataStreamRequest{
+        let openAIMessages = messages.map({OpenAIChatMessage(role: $0.role, content: $0.content)})
+        let body = OpenAIChatBody(model: "gpt-4", messages: openAIMessages, stream: true)
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(Constants.openAIApiKey)"
+        ]
+        
+        return AF.streamRequest(endpointUrl, method: .post, parameters: body, encoder: .json, headers: headers)
+    }
+    
 
 }
 
@@ -61,7 +71,7 @@ struct OpenAIChatChoice: Decodable {
 
 
 enum Constants{
-    static let openAIApiKey = "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"
+    static let openAIApiKey = "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"
 }
 
 

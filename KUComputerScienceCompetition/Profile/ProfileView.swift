@@ -178,8 +178,10 @@ struct ProfileView: View {
                             .font(.system(size: 150))
                         
                         Text("\(streak)")
-                            .font(.system(size: 50))
+                            .font(.custom("Lora-Regular", size: 50))
                             .padding(.bottom, -100)
+                            .foregroundColor(.black)
+                            
                             
                         
                     }

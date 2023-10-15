@@ -149,7 +149,7 @@ struct LoginView: View {
                                 .font(.custom("Lora-Regular", size: 18))
                                 .fontWeight(.medium)
 
-                            Text("Sign In")
+                            Text("Sign Up")
                                 .foregroundColor(.white)
                                 .foregroundColor(.white)
                                 .font(.custom("Lora-Regular", size: 18))

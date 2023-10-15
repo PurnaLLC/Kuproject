@@ -44,9 +44,12 @@ struct NCEditCheckinView: View {
                           
                             HStack{
                                 if checkin.iscompleted{
-                                    Text("")
+                                    Text("Done")
+                                        .font(.custom("Lora-Regular", size: 15))
+                                    
                                 }else{
                                     Text("Mark As Done")
+                                        .font(.custom("Lora-Regular", size: 15))
                                 }
                             
                                 

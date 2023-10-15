@@ -160,10 +160,10 @@ struct NCCheckinsView: View {
                                                 
                                                 HStack{
                                                     Text("\(checkin.name) \(checkin.formattedDate())")
-                                                        .font(Font.headline.weight(.semibold))
-
-                                                        .foregroundColor( Color.black)
                                                         .font(.custom("Lora-Regular", size: 20))
+                                                        .bold()
+                                                        .foregroundColor(.black)
+
                                                         
                                                     
                                                     
@@ -278,11 +278,10 @@ struct NCCheckinsView: View {
                                                 
                                                 HStack{
                                                     Text("\(checkin.name) \(checkin.formattedDate())")
-                                                        .font(Font.headline.weight(.semibold))
-
-                                                        .foregroundColor(darkMode ? Color.white : Color.black)
                                                         .font(.custom("Lora-Regular", size: 20))
-                                                        
+                                                        .bold()
+                                                        .foregroundColor(.black)
+
                                                     
                                                     
                                                         .lineLimit(1)
@@ -391,9 +390,10 @@ struct NCCheckinsView: View {
                             
                             HStack{
                                 Text("Add")
-                                    .foregroundColor(darkMode ? Color.white : Color.black)
                                     .font(.custom("Lora-Regular", size: 25))
                                     .fontWeight(.medium)
+                                    .foregroundColor(darkMode ? Color.white : Color.black)
+                                  
 
                                 
                             }

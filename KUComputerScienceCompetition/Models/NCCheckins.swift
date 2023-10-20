@@ -19,6 +19,7 @@ struct NCCheckIn: Identifiable, Codable {
     var description = ""
     var tododate = Date()
     var ontime = false
+    var iscreated = false 
     
     
     func formattedDate() -> String {

@@ -245,9 +245,9 @@
 				3060FF1A2ACAFDA500CBE117 /* TodoFormatedView.swift */,
 				3060FF1C2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift */,
 				3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */,
-				304606472ACCDCED00452DEE /* CheckinSortedListView4.swift */,
 				3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */,
 				304606452ACCDCE200452DEE /* CheckinSortedListView3.swift */,
+				304606472ACCDCED00452DEE /* CheckinSortedListView4.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";

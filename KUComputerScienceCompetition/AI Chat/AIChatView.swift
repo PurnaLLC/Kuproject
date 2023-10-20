@@ -86,6 +86,11 @@ struct AIChatView: View {
                         
                     }
                     
+                    .onAppear{
+                        
+                        print(lastTenCheckins)
+                    }
+                    
 
                     
 

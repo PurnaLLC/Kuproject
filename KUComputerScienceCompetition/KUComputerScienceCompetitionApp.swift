@@ -23,9 +23,9 @@ import Combine
     @AppStorage("log_status") var log_Status = false
     
     @StateObject var viewModel = AuthViewModel()
+     
 
-
-    
+     
     init () {
         FirebaseApp.configure()
         let db = Firestore.firestore()

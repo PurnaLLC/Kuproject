@@ -28,72 +28,86 @@ struct CreateTodo: View {
                     
                     TextField("Todo Name", text: $checkin.name)
                         .textFieldStyle(.roundedBorder)
-            
+                    
                     
                     Text("Started Date: \(checkin.formattedDate())")
                     
                     
-                        
-                        
-                    VStack(alignment: .center){
-                    
-                        
-                        HStack{
-                            if checkin.iscompleted{
-                                Text("")
-                            }else{
-                                Text("Mark As Done")
-                            }
-                            
-                            Button {
-                                
-                                
-                                checkin.iscompleted.toggle()
-                                
-                                
-                                if checkin.tododate > Date(){
-                                    
-                                    checkin.ontime = true
-                                }else{
-                                    checkin.ontime = false
-                                    
-                                }
-                                
-                                
-                                
-                                
-                                
-                            } label: {
-                                
-                                VStack{
-                                    Image(systemName: "checkmark.circle")
-                                    
-                                        .font(.title2)
-                                     
-                                        .foregroundColor(checkin.iscompleted ? Color.green : Color.red)
-                                        .padding(.horizontal, 18)
-                                        .padding(.vertical, 8)
-                                        .frame(width: 30, height: 30)
-                                        
-                                        
-                                }
-                                
-                            }
-                            
-                            
-                            
+                        .onAppear{
+                            print(checkin.date)
+                            print("\(Date())")
                         }
+                    
+            
+                   if checkin.iscreated == true {
+                        
+                        VStack(alignment: .center){
+                            
+                            
+                            
+                            
+                            
+                            
+                            HStack{
+                                if checkin.iscompleted{
+                                    Text("Done")
+                                }else{
+                                    Text("Mark As Done")
+                                }
+                                
+                                Button {
+                                    
+                                    
+                                    checkin.iscompleted.toggle()
+                                    
+                                    
+                                    if checkin.tododate > Date(){
+                                        
+                                        checkin.ontime = true
+                                    }else{
+                                        checkin.ontime = false
+                                        
+                                    }
+                                    
+                                    
+                                    
+                                    
+                                    
+                                } label: {
+                                    
+                                    VStack{
+                                        Image(systemName: "checkmark.circle")
+                                        
+                                            .font(.title2)
+                                        
+                                            .foregroundColor(checkin.iscompleted ? Color.green : Color.red)
+                                            .padding(.horizontal, 18)
+                                            .padding(.vertical, 8)
+                                            .frame(width: 30, height: 30)
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                                
+                                
+                            }
+                            
+                            
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                        }
+                        
                         
                         
                         .padding(.top, 10)
                         .padding(.bottom, 10)
                         
-                        
-                        
-                        
-                        
-                        
                     }
+                    
+                    
+                    
                     VStack {
                         DatePicker("Finished By", selection: $checkin.tododate, in: Date()..., displayedComponents: .date)
                         
@@ -127,9 +141,21 @@ struct CreateTodo: View {
                 
                 
                  
-              
-
-                save(checkin)
+                
+                if checkin.iscreated == false  {
+                    
+                
+                    checkin.iscreated = true
+                    
+                    save(checkin)
+                    
+                    
+                }else{
+                    
+                    
+                    save(checkin)
+                    
+                }
                 
                 dismiss()
                 

@@ -26,11 +26,83 @@ struct NCCreateTodo: View {
             
                     VStack{
                         
-                        TextField("Todo Name", text: $checkin.name)
+                        TextField("To Do Name", text: $checkin.name)
                             .textFieldStyle(.roundedBorder)
                 
                         
                         Text("Started Date: \(checkin.formattedDate())")
+                        
+                        
+                        
+                       if  checkin.iscreated == true {
+                            
+                            VStack(alignment: .center){
+                                
+                                
+                                
+                                
+                                
+                                
+                                HStack{
+                                    if checkin.iscompleted{
+                                        Text("Done")
+                                    }else{
+                                        Text("Mark As Done")
+                                    }
+                                    
+                                    Button {
+                                        
+                                        
+                                        checkin.iscompleted.toggle()
+                                        
+                                        
+                                        if checkin.tododate > Date(){
+                                            
+                                            checkin.ontime = true
+                                        }else{
+                                            checkin.ontime = false
+                                            
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    } label: {
+                                        
+                                        VStack{
+                                            Image(systemName: "checkmark.circle")
+                                            
+                                                .font(.title2)
+                                            
+                                                .foregroundColor(checkin.iscompleted ? Color.green : Color.red)
+                                                .padding(.horizontal, 18)
+                                                .padding(.vertical, 8)
+                                                .frame(width: 30, height: 30)
+                                            
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                    
+                                    
+                                }
+                                
+                                
+                                .padding(.top, 10)
+                                .padding(.bottom, 10)
+                            }
+                            
+                            
+                            
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                            
+                        }
+                        
+                        
+                        
                         
                         
                         VStack {
@@ -47,12 +119,14 @@ struct NCCreateTodo: View {
                     
                 }
                 
+     
+
                 
            
                 
                 VStack(alignment: .center){
                     
-                    TextField("Description of todo", text: $checkin.description, axis: .vertical)
+                    TextField("Description of To Do", text: $checkin.description, axis: .vertical)
                                .lineLimit(2)
                                .textFieldStyle(.roundedBorder)
                                .padding()
@@ -67,10 +141,20 @@ struct NCCreateTodo: View {
                 Button {
                     
                     
-                     
-                  
-
-                    save(checkin)
+                    if checkin.iscreated == false  {
+                        
+                    
+                        checkin.iscreated = true
+                        
+                        save(checkin)
+                        
+                        
+                    }else{
+                        
+                        
+                        save(checkin)
+                        
+                    }
                     
                     dismiss()
                     

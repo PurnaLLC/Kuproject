@@ -18,7 +18,7 @@ import Combine
     class AIChatViewModel: ObservableObject {
         
         @Published var messages: [Message] = [
-            Message(id: "first-message", role: .system, content: "You are an AI that helps people with their todos. You give the user feedback on important information relating to their todos.", createdAt: Date()),
+            Message(id: "first-message", role: .system, content: "You are an AI that helps people with their todos. You give the user feedback on important information relating to their todos. You can not create Todos but only give information about the Todos", createdAt: Date()),
         
 
         ]
@@ -33,21 +33,26 @@ import Combine
         func sendMessage(_ checkins: [CheckIn])  {
             
             
-            let checkinInfo = checkins.map { checkin in
+            
+            var checkinInfo = checkins.map { checkin in
+                
+                
+                
+                
+
                 return "\(checkin.name) - \(checkin.description) - \(checkin.tododate) - \(checkin.iscompleted) - \(checkin.ontime)"
             }
             
-            
-            let newMessage = Message(id: UUID().uuidString, role: .user, content: "\(currentInput) Here are my  todos: \(checkinInfo )", createdAt: Date())
+            let newMessage = Message(id: UUID().uuidString, role: .user, content: "\(currentInput) Here are my  todos: \(checkinInfo) if this is empty there are NO To Dos", createdAt: Date())
             messages.append(newMessage)
             
                 
-            
+            print(newMessage)
             
             let firebaseUSerMessage = FirebaseMessage(role: newMessage.role.rawValue, content: currentInput)
 
             add(firebaseUSerMessage)
-
+            
             
             
             

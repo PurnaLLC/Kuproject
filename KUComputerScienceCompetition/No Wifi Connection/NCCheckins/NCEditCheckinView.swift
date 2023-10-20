@@ -29,7 +29,7 @@ struct NCEditCheckinView: View {
                     VStack{
                         
                         
-                        TextField("Todo Name", text: $checkin.name)
+                        TextField("To Do Name", text: $checkin.name)
                             .textFieldStyle(.roundedBorder)
                         
                  
@@ -126,7 +126,7 @@ struct NCEditCheckinView: View {
                 
                 VStack(alignment: .center){
                     
-                    TextField("Description of todo", text: $checkin.description, axis: .vertical)
+                    TextField("Description of To Do", text: $checkin.description, axis: .vertical)
                                .lineLimit(2)
                                .textFieldStyle(.roundedBorder)
                                .padding()

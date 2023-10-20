@@ -122,7 +122,7 @@ struct TodoListView: View {
                     ScrollView{
                         
                         VStack(alignment: .leading) {
-                            Text("Todo" )
+                            Text("To Do" )
                                 .foregroundColor(darkMode ? Color.white : Color.black)
                                 .font(.custom("Lora-Regular", size: 25))
                                 .bold()
@@ -200,7 +200,7 @@ struct TodoListView: View {
                                                             .foregroundColor(.red)
                                                             .cornerRadius(10)
                                                             .multilineTextAlignment(.center)
-                                                        Text("Delete Todo")
+                                                        Text("Delete To Do")
                                                         
                                                         
                                                     }
@@ -339,7 +339,7 @@ struct TodoListView: View {
                                                         .foregroundColor(.red)
                                                         .cornerRadius(10)
                                                         .multilineTextAlignment(.center)
-                                                    Text("Delete Todo")
+                                                    Text("Delete To Do")
                                                     
                                                     
                                                 }
@@ -485,7 +485,7 @@ struct TodoListView: View {
                             
                             
                         }
-                        .navigationTitle("Add Checkin")
+                        .navigationTitle("Add To Do")
                     }
                 }
                 
@@ -515,5 +515,4 @@ struct TodoListView: View {
         return CheckIn(date: ncCheckin.date, name: ncCheckin.name, userId: ncCheckin.userId, documentId: ncCheckin.documentId, iscompleted: ncCheckin.iscompleted, description: ncCheckin.description, tododate: ncCheckin.tododate, ontime: ncCheckin.ontime)
     }
 }
-
 

@@ -115,7 +115,7 @@ struct NCCheckinsView: View {
                         
                             
                             VStack{
-                                Text("Todo" )
+                                Text("To Do" )
                                     .foregroundColor(darkMode ? Color.white : Color.black)
                                    
                                     .font(.custom("Lora-Regular", size: 25))
@@ -129,7 +129,7 @@ struct NCCheckinsView: View {
                             }
                             
                             if isEmpty == true{
-                                Text("NO Todo")
+                                Text("NO To Do")
                                     .foregroundColor(darkMode ? Color.white : Color.black)
                                     .font(.custom("Lora-Regular", size: 16))
 
@@ -195,7 +195,7 @@ struct NCCheckinsView: View {
                                                             .foregroundColor(.red)
                                                             .cornerRadius(10)
                                                             .multilineTextAlignment(.center)
-                                                        Text("Delete Todo")
+                                                        Text("Delete To do")
                                                         
                                                         
                                                     }
@@ -256,7 +256,7 @@ struct NCCheckinsView: View {
 
                             
                             if isEmpty2 == true{
-                                Text("NO Todo")
+                                Text("NO To Do")
                                     .foregroundColor(darkMode ? Color.white : Color.black)
                                     .font(.custom("Lora-Regular", size: 16))
 
@@ -313,7 +313,7 @@ struct NCCheckinsView: View {
                                                             .foregroundColor(.red)
                                                             .cornerRadius(10)
                                                             .multilineTextAlignment(.center)
-                                                        Text("Delete Todo")
+                                                        Text("Delete To Do")
                                                         
                                                         
                                                     }
@@ -430,7 +430,7 @@ struct NCCheckinsView: View {
                                 vm.add(checkin: returnedCheckIn)
                                 
                            }
-                           .navigationTitle("Add Todo")
+                           .navigationTitle("Add To Do")
                         }
                     }
                     

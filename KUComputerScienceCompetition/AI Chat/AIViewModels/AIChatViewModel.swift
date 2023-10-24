@@ -36,14 +36,10 @@ import Combine
             
             var checkinInfo = checkins.map { checkin in
                 
-                
-                
-                
-
                 return "\(checkin.name) - \(checkin.description) - \(checkin.tododate) - \(checkin.iscompleted) - \(checkin.ontime)"
             }
             
-            let newMessage = Message(id: UUID().uuidString, role: .user, content: "\(currentInput) Here are my  todos: \(checkinInfo) if this is empty there are NO To Dos", createdAt: Date())
+            let newMessage = Message(id: UUID().uuidString, role: .user, content: "Here is my question \(currentInput). Here are my  todos: \(checkinInfo) if this is empty there are NO To Dos", createdAt: Date())
             messages.append(newMessage)
             
                 

@@ -15,6 +15,8 @@ struct NCCreateTodo: View {
         var save: (NCCheckIn)->()
         @Environment(\.dismiss) var dismiss
         
+    @AppStorage("streak") var streak: Int = 0
+
     
     @AppStorage("theme") var darkMode = false
 
@@ -38,17 +40,8 @@ struct NCCreateTodo: View {
                             
                             VStack(alignment: .center){
                                 
-                                
-                                
-                                
-                                
-                                
-                                HStack{
-                                    if checkin.iscompleted{
-                                        Text("Done")
-                                    }else{
-                                        Text("Mark As Done")
-                                    }
+                      
+                           
                                     
                                     Button {
                                         
@@ -59,16 +52,38 @@ struct NCCreateTodo: View {
                                         if checkin.tododate > Date(){
                                             
                                             checkin.ontime = true
+                                            
+                                       
+
                                         }else{
                                             checkin.ontime = false
                                             
+                                            
+                                        }
+                                        
+                                        if checkin.iscompleted == true {
+                                            checkin.completedDate = Date()
                                         }
                                         
                                         
                                         
                                         
                                         
+                                        
                                     } label: {
+                                        
+                                        HStack{
+                                        
+                                        if checkin.iscompleted{
+                                            Text("Done")
+                                                .foregroundColor(darkMode ? Color.white : Color.black)
+
+                                        }else{
+                                            Text("Mark As Done")
+                                                .foregroundColor(darkMode ? Color.white : Color.black)
+
+                                            
+                                        }
                                         
                                         VStack{
                                             Image(systemName: "checkmark.circle")
@@ -153,6 +168,11 @@ struct NCCreateTodo: View {
                         
                         
                         save(checkin)
+
+                        if checkin.iscompleted{
+                            performCheckIn(checkin)
+                        }
+
                         
                     }
                     
@@ -186,20 +206,24 @@ struct NCCreateTodo: View {
             .padding()
         }
         
-
-
-
-
-
-
-
-
-
+    
+    private func performCheckIn(_ checkin : NCCheckIn) {
         
 
-
-
-
+            
+            if checkin.ontime == true{
+                
+                streak += 1
+            }else{
+                
+                streak = 0
+                
+            }
+            print(streak)
+        
+        
+    }
+    
         
     }
 

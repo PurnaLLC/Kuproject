@@ -21,7 +21,7 @@ struct CheckIn: Identifiable, Codable {
     var tododate = Date()
     var ontime = false
     var iscreated = false
-    
+    var completedDate: Date?
     
     
     func formattedDate() -> String {

@@ -45,6 +45,12 @@ struct CheckInListView: View {
                     CheckinSortedListView( vm: vmView)
                     
                         .padding()
+                
+                
+                    CheckinCompletedSortedListView(vm: vmView)
+                    .padding()
+                
+                
                     
                     CheckinSortedListView2( vm: vmView)
                     
@@ -61,6 +67,9 @@ struct CheckInListView: View {
                     CheckinSortedListView4( vm: vmView)
                     
                         .padding()
+                
+                
+                
                     
                     
                     

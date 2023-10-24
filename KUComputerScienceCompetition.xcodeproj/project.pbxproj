@@ -17,6 +17,9 @@
 		3046064A2ACD0B4E00452DEE /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304606492ACD0B4E00452DEE /* NetworkManger.swift */; };
 		3046064F2ACD12AC00452DEE /* NotConnected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3046064E2ACD12AC00452DEE /* NotConnected.swift */; };
 		304606512ACD159700452DEE /* NotConnectedAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304606502ACD159700452DEE /* NotConnectedAI.swift */; };
+		30474F3A2AE3C18C009B4009 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30474F392AE3C18C009B4009 /* InputView.swift */; };
+		30474F402AE45F33009B4009 /* NCDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30474F3F2AE45F33009B4009 /* NCDataService.swift */; };
+		30474F482AE7F7D0009B4009 /* CheckinCompletedSortedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30474F472AE7F7D0009B4009 /* CheckinCompletedSortedListView.swift */; };
 		3060FF012AC46F3000CBE117 /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF002AC46F3000CBE117 /* AIChatView.swift */; };
 		3060FF032AC46F4F00CBE117 /* AIChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */; };
 		3060FF052AC46F7000CBE117 /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF042AC46F7000CBE117 /* OpenAIService.swift */; };
@@ -24,8 +27,6 @@
 		3060FF092AC46FEC00CBE117 /* MessageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF082AC46FEC00CBE117 /* MessageDataService.swift */; };
 		3060FF0B2AC4708300CBE117 /* FirebaseMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */; };
 		3060FF0E2AC4719900CBE117 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3060FF0D2AC4719900CBE117 /* Alamofire */; };
-		3060FF1B2ACAFDA500CBE117 /* TodoFormatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF1A2ACAFDA500CBE117 /* TodoFormatedView.swift */; };
-		3060FF1D2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF1C2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift */; };
 		3060FF1F2ACB241100CBE117 /* CheckinSortedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */; };
 		3060FF212ACB293C00CBE117 /* CheckinSortedListView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */; };
 		3069A9252A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3069A9242A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift */; };
@@ -68,12 +69,9 @@
 		30944F892AD8BAA600BE925F /* NCCheckinsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F882AD8BAA600BE925F /* NCCheckinsView.swift */; };
 		30944F8B2AD8BACA00BE925F /* NCCheckinsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */; };
 		30944F8D2AD8C1AE00BE925F /* NCCreateTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F8C2AD8C1AE00BE925F /* NCCreateTodo.swift */; };
-		30944F8F2AD8C5B000BE925F /* NCEditCheckinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30944F8E2AD8C5B000BE925F /* NCEditCheckinView.swift */; };
-		30B037132AA7F86E00BA25D5 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037122AA7F86E00BA25D5 /* InputView.swift */; };
 		30B037152AA7F89900BA25D5 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037142AA7F89900BA25D5 /* TodoListView.swift */; };
 		30B037172AA7F8B200BA25D5 /* CreateTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037162AA7F8B200BA25D5 /* CreateTodo.swift */; };
 		30B037192AA802C900BA25D5 /* CheckInListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037182AA802C900BA25D5 /* CheckInListView.swift */; };
-		30B0371B2AA802E700BA25D5 /* CheckInEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0371A2AA802E700BA25D5 /* CheckInEditView.swift */; };
 		30B037212AA8C1D000BA25D5 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037202AA8C1D000BA25D5 /* CheckInViewModel.swift */; };
 		30B037232AA8C1ED00BA25D5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B037222AA8C1ED00BA25D5 /* ProfileView.swift */; };
 		30B0372B2AA8C4A500BA25D5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0372A2AA8C4A500BA25D5 /* LoginView.swift */; };
@@ -92,14 +90,15 @@
 		304606492ACD0B4E00452DEE /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
 		3046064E2ACD12AC00452DEE /* NotConnected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotConnected.swift; sourceTree = "<group>"; };
 		304606502ACD159700452DEE /* NotConnectedAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotConnectedAI.swift; sourceTree = "<group>"; };
+		30474F392AE3C18C009B4009 /* InputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		30474F3F2AE45F33009B4009 /* NCDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCDataService.swift; sourceTree = "<group>"; };
+		30474F472AE7F7D0009B4009 /* CheckinCompletedSortedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinCompletedSortedListView.swift; sourceTree = "<group>"; };
 		3060FF002AC46F3000CBE117 /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
 		3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewModel.swift; sourceTree = "<group>"; };
 		3060FF042AC46F7000CBE117 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		3060FF062AC46F9100CBE117 /* FirebaseMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageModel.swift; sourceTree = "<group>"; };
 		3060FF082AC46FEC00CBE117 /* MessageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDataService.swift; sourceTree = "<group>"; };
 		3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessageViewModel.swift; sourceTree = "<group>"; };
-		3060FF1A2ACAFDA500CBE117 /* TodoFormatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoFormatedView.swift; sourceTree = "<group>"; };
-		3060FF1C2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatedTodoCompleteView.swift; sourceTree = "<group>"; };
 		3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinSortedListView.swift; sourceTree = "<group>"; };
 		3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinSortedListView2.swift; sourceTree = "<group>"; };
 		3069A9212A9F979700E96C79 /* KUComputerScienceCompetition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KUComputerScienceCompetition.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,12 +115,9 @@
 		30944F882AD8BAA600BE925F /* NCCheckinsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckinsView.swift; sourceTree = "<group>"; };
 		30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCheckinsViewModel.swift; sourceTree = "<group>"; };
 		30944F8C2AD8C1AE00BE925F /* NCCreateTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCCreateTodo.swift; sourceTree = "<group>"; };
-		30944F8E2AD8C5B000BE925F /* NCEditCheckinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NCEditCheckinView.swift; sourceTree = "<group>"; };
-		30B037122AA7F86E00BA25D5 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		30B037142AA7F89900BA25D5 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		30B037162AA7F8B200BA25D5 /* CreateTodo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodo.swift; sourceTree = "<group>"; };
 		30B037182AA802C900BA25D5 /* CheckInListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInListView.swift; sourceTree = "<group>"; };
-		30B0371A2AA802E700BA25D5 /* CheckInEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInEditView.swift; sourceTree = "<group>"; };
 		30B037202AA8C1D000BA25D5 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
 		30B037222AA8C1ED00BA25D5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		30B0372A2AA8C4A500BA25D5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -173,23 +169,76 @@
 		3046064B2ACD127E00452DEE /* No Wifi Connection */ = {
 			isa = PBXGroup;
 			children = (
+				30944F872AD8BA7A00BE925F /* NCCheckinsView */,
+				30474F412AE45F77009B4009 /* NCViewModel */,
 				3046064E2ACD12AC00452DEE /* NotConnected.swift */,
 				304606502ACD159700452DEE /* NotConnectedAI.swift */,
 				3077CAEA2ADBA2A30061C897 /* NotConnectedProfile.swift */,
-				30944F872AD8BA7A00BE925F /* NCCheckins */,
 			);
 			path = "No Wifi Connection";
+			sourceTree = "<group>";
+		};
+		30474F412AE45F77009B4009 /* NCViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */,
+			);
+			path = NCViewModel;
+			sourceTree = "<group>";
+		};
+		30474F422AE45FC0009B4009 /* CheckinViews */ = {
+			isa = PBXGroup;
+			children = (
+				30B037182AA802C900BA25D5 /* CheckInListView.swift */,
+				3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */,
+				30474F472AE7F7D0009B4009 /* CheckinCompletedSortedListView.swift */,
+				3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */,
+				304606452ACCDCE200452DEE /* CheckinSortedListView3.swift */,
+				304606472ACCDCED00452DEE /* CheckinSortedListView4.swift */,
+			);
+			path = CheckinViews;
+			sourceTree = "<group>";
+		};
+		30474F432AE46035009B4009 /* AIViews */ = {
+			isa = PBXGroup;
+			children = (
+				3060FF002AC46F3000CBE117 /* AIChatView.swift */,
+			);
+			path = AIViews;
+			sourceTree = "<group>";
+		};
+		30474F442AE46045009B4009 /* AIViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */,
+				3060FF042AC46F7000CBE117 /* OpenAIService.swift */,
+				3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */,
+			);
+			path = AIViewModels;
+			sourceTree = "<group>";
+		};
+		30474F452AE46143009B4009 /* TodoViews */ = {
+			isa = PBXGroup;
+			children = (
+				30B037142AA7F89900BA25D5 /* TodoListView.swift */,
+				30B037162AA7F8B200BA25D5 /* CreateTodo.swift */,
+			);
+			path = TodoViews;
+			sourceTree = "<group>";
+		};
+		30474F462AE46158009B4009 /* TodoViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				30B037202AA8C1D000BA25D5 /* CheckInViewModel.swift */,
+			);
+			path = TodoViewModel;
 			sourceTree = "<group>";
 		};
 		3060FEFF2AC46F0000CBE117 /* AI Chat */ = {
 			isa = PBXGroup;
 			children = (
-				3060FF002AC46F3000CBE117 /* AIChatView.swift */,
-				3060FF022AC46F4F00CBE117 /* AIChatViewModel.swift */,
-				3060FF042AC46F7000CBE117 /* OpenAIService.swift */,
-				3060FF082AC46FEC00CBE117 /* MessageDataService.swift */,
-				3060FF062AC46F9100CBE117 /* FirebaseMessageModel.swift */,
-				3060FF0A2AC4708300CBE117 /* FirebaseMessageViewModel.swift */,
+				30474F432AE46035009B4009 /* AIViews */,
+				30474F442AE46045009B4009 /* AIViewModels */,
 			);
 			path = "AI Chat";
 			sourceTree = "<group>";
@@ -215,10 +264,10 @@
 			children = (
 				3077CAE82ADA3EBD0061C897 /* Info.plist */,
 				3069A9732A9F9BA700E96C79 /* KUComputerScienceCompetition.entitlements */,
-				3077CAE62ADA3CB10061C897 /* Font */,
 				3069A96B2A9F9A5200E96C79 /* Components */,
 				3069A96C2A9F9A6100E96C79 /* Views and ViewModels */,
 				30B0370B2AA63B5300BA25D5 /* DataService */,
+				3069A9742A9F9BD900E96C79 /* Auth */,
 				30B0370A2AA63B0800BA25D5 /* Models */,
 				3069A9242A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift */,
 				3069A9262A9F979700E96C79 /* ContentView.swift */,
@@ -241,13 +290,8 @@
 		3069A96B2A9F9A5200E96C79 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				30B037122AA7F86E00BA25D5 /* InputView.swift */,
-				3060FF1A2ACAFDA500CBE117 /* TodoFormatedView.swift */,
-				3060FF1C2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift */,
-				3060FF1E2ACB241100CBE117 /* CheckinSortedListView.swift */,
-				3060FF202ACB293C00CBE117 /* CheckinSortedListView2.swift */,
-				304606452ACCDCE200452DEE /* CheckinSortedListView3.swift */,
-				304606472ACCDCED00452DEE /* CheckinSortedListView4.swift */,
+				3077CAE62ADA3CB10061C897 /* Font */,
+				30474F392AE3C18C009B4009 /* InputView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -255,13 +299,12 @@
 		3069A96C2A9F9A6100E96C79 /* Views and ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3069A9772A9F9F8600E96C79 /* ViewController */,
 				3046064B2ACD127E00452DEE /* No Wifi Connection */,
 				3069A97A2A9F9FAA00E96C79 /* TodoList */,
 				3069A97B2A9F9FB500E96C79 /* DailyCheckUp */,
 				3069A9792A9F9FA500E96C79 /* Profile */,
-				3069A9772A9F9F8600E96C79 /* TabView */,
 				3060FEFF2AC46F0000CBE117 /* AI Chat */,
-				3069A9742A9F9BD900E96C79 /* Auth */,
 			);
 			name = "Views and ViewModels";
 			sourceTree = "<group>";
@@ -293,12 +336,12 @@
 			path = AuthViewModel;
 			sourceTree = "<group>";
 		};
-		3069A9772A9F9F8600E96C79 /* TabView */ = {
+		3069A9772A9F9F8600E96C79 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				302EEBA72AA8E933005F81AB /* Home.swift */,
 			);
-			path = TabView;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		3069A9792A9F9FA500E96C79 /* Profile */ = {
@@ -312,10 +355,8 @@
 		3069A97A2A9F9FAA00E96C79 /* TodoList */ = {
 			isa = PBXGroup;
 			children = (
-				30B037142AA7F89900BA25D5 /* TodoListView.swift */,
-				30B037202AA8C1D000BA25D5 /* CheckInViewModel.swift */,
-				30B037162AA7F8B200BA25D5 /* CreateTodo.swift */,
-				30B0371A2AA802E700BA25D5 /* CheckInEditView.swift */,
+				30474F452AE46143009B4009 /* TodoViews */,
+				30474F462AE46158009B4009 /* TodoViewModel */,
 			);
 			path = TodoList;
 			sourceTree = "<group>";
@@ -323,7 +364,7 @@
 		3069A97B2A9F9FB500E96C79 /* DailyCheckUp */ = {
 			isa = PBXGroup;
 			children = (
-				30B037182AA802C900BA25D5 /* CheckInListView.swift */,
+				30474F422AE45FC0009B4009 /* CheckinViews */,
 			);
 			path = DailyCheckUp;
 			sourceTree = "<group>";
@@ -336,15 +377,13 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
-		30944F872AD8BA7A00BE925F /* NCCheckins */ = {
+		30944F872AD8BA7A00BE925F /* NCCheckinsView */ = {
 			isa = PBXGroup;
 			children = (
 				30944F882AD8BAA600BE925F /* NCCheckinsView.swift */,
-				30944F8A2AD8BACA00BE925F /* NCCheckinsViewModel.swift */,
 				30944F8C2AD8C1AE00BE925F /* NCCreateTodo.swift */,
-				30944F8E2AD8C5B000BE925F /* NCEditCheckinView.swift */,
 			);
-			path = NCCheckins;
+			path = NCCheckinsView;
 			sourceTree = "<group>";
 		};
 		30B0370A2AA63B0800BA25D5 /* Models */ = {
@@ -352,6 +391,7 @@
 			children = (
 				302EEBAF2AA8EBBC005F81AB /* User.swift */,
 				30944F852AD8BA4600BE925F /* NCCheckins.swift */,
+				3060FF062AC46F9100CBE117 /* FirebaseMessageModel.swift */,
 				302EEBB12AA8EBE4005F81AB /* ChatInListModel.swift */,
 			);
 			path = Models;
@@ -361,6 +401,8 @@
 			isa = PBXGroup;
 			children = (
 				302EEBAD2AA8EB5F005F81AB /* CheckInDataService.swift */,
+				3060FF082AC46FEC00CBE117 /* MessageDataService.swift */,
+				30474F3F2AE45F33009B4009 /* NCDataService.swift */,
 			);
 			path = DataService;
 			sourceTree = "<group>";
@@ -474,16 +516,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30474F402AE45F33009B4009 /* NCDataService.swift in Sources */,
 				3046064A2ACD0B4E00452DEE /* NetworkManger.swift in Sources */,
 				30944F8B2AD8BACA00BE925F /* NCCheckinsViewModel.swift in Sources */,
 				3060FF012AC46F3000CBE117 /* AIChatView.swift in Sources */,
 				30B037212AA8C1D000BA25D5 /* CheckInViewModel.swift in Sources */,
+				30474F482AE7F7D0009B4009 /* CheckinCompletedSortedListView.swift in Sources */,
 				3069A9272A9F979700E96C79 /* ContentView.swift in Sources */,
 				30944F862AD8BA4600BE925F /* NCCheckins.swift in Sources */,
 				3060FF092AC46FEC00CBE117 /* MessageDataService.swift in Sources */,
 				30B0372B2AA8C4A500BA25D5 /* LoginView.swift in Sources */,
 				30B037152AA7F89900BA25D5 /* TodoListView.swift in Sources */,
-				3060FF1D2ACAFEA500CBE117 /* FormatedTodoCompleteView.swift in Sources */,
 				30B037192AA802C900BA25D5 /* CheckInListView.swift in Sources */,
 				30944F892AD8BAA600BE925F /* NCCheckinsView.swift in Sources */,
 				30944F8D2AD8C1AE00BE925F /* NCCreateTodo.swift in Sources */,
@@ -494,7 +537,6 @@
 				3077CAEB2ADBA2A30061C897 /* NotConnectedProfile.swift in Sources */,
 				3046064F2ACD12AC00452DEE /* NotConnected.swift in Sources */,
 				3069A9252A9F979700E96C79 /* KUComputerScienceCompetitionApp.swift in Sources */,
-				30B037132AA7F86E00BA25D5 /* InputView.swift in Sources */,
 				302EEBA82AA8E933005F81AB /* Home.swift in Sources */,
 				3060FF032AC46F4F00CBE117 /* AIChatViewModel.swift in Sources */,
 				302EEBAE2AA8EB5F005F81AB /* CheckInDataService.swift in Sources */,
@@ -502,14 +544,12 @@
 				3060FF0B2AC4708300CBE117 /* FirebaseMessageViewModel.swift in Sources */,
 				302EEBAA2AA8E9B0005F81AB /* RegistrationView.swift in Sources */,
 				3060FF1F2ACB241100CBE117 /* CheckinSortedListView.swift in Sources */,
-				30944F8F2AD8C5B000BE925F /* NCEditCheckinView.swift in Sources */,
 				302EEBB02AA8EBBC005F81AB /* User.swift in Sources */,
 				3060FF072AC46F9100CBE117 /* FirebaseMessageModel.swift in Sources */,
-				3060FF1B2ACAFDA500CBE117 /* TodoFormatedView.swift in Sources */,
 				30B037312AA8C54600BA25D5 /* AuthViewModel.swift in Sources */,
 				30B037172AA7F8B200BA25D5 /* CreateTodo.swift in Sources */,
-				30B0371B2AA802E700BA25D5 /* CheckInEditView.swift in Sources */,
 				304606512ACD159700452DEE /* NotConnectedAI.swift in Sources */,
+				30474F3A2AE3C18C009B4009 /* InputView.swift in Sources */,
 				304606462ACCDCE200452DEE /* CheckinSortedListView3.swift in Sources */,
 				304606482ACCDCEE00452DEE /* CheckinSortedListView4.swift in Sources */,
 			);

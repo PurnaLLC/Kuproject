@@ -20,13 +20,15 @@ struct NCCheckinsView: View {
         
         @State private var sortingOption: SortingOption = .newestFirst
         
-    
+    let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
+
     
         enum SortingOption: String, CaseIterable {
             
             case newestFirst = "First Add"
             case nameAZ = "A-Z"
             case duedate = "Coming Up"
+            case last30days = "Last 30 days"
             
         }
         
@@ -38,8 +40,17 @@ struct NCCheckinsView: View {
                 return vm.ncCheckins.sorted { $0.name < $1.name }
             case .duedate:
                 return vm.ncCheckins.sorted { $0.tododate < $1.tododate }
+                
+            case .last30days:
+                return vm.ncCheckins.filter { checkIn in
+                    if let completedDate = checkIn.completedDate {
+                        return completedDate >= thirtyDaysAgo
+                    }
+                    return false
+                }
             }
-        }
+        
+    }
         
    
         
@@ -151,7 +162,7 @@ struct NCCheckinsView: View {
                                         
                                         HStack{
                                             NavigationLink {
-                                                NCEditCheckinView(checkin: checkin) { returnedCheckIn in
+                                                NCCreateTodo(checkin: checkin) { returnedCheckIn in
                                                     vm.update(checkin: returnedCheckIn)
                                                     
                                                 }
@@ -159,7 +170,7 @@ struct NCCheckinsView: View {
                                             } label: {
                                                 
                                                 HStack{
-                                                    Text("\(checkin.name) \(checkin.formattedDate())")
+                                                    Text("\(checkin.name)")
                                                         .font(.custom("Lora-Regular", size: 20))
                                                         .bold()
                                                         .foregroundColor(.black)
@@ -269,7 +280,7 @@ struct NCCheckinsView: View {
                                     HStack{
                                         HStack{
                                             NavigationLink {
-                                                NCEditCheckinView(checkin: checkin) { returnedCheckIn in
+                                                NCCreateTodo(checkin: checkin) { returnedCheckIn in
                                                     vm.update(checkin: returnedCheckIn)
                                                 }
                                                 
@@ -277,7 +288,7 @@ struct NCCheckinsView: View {
                                             } label: {
                                                 
                                                 HStack{
-                                                    Text("\(checkin.name) \(checkin.formattedDate())")
+                                                    Text("\(checkin.name) ")
                                                         .font(.custom("Lora-Regular", size: 20))
                                                         .bold()
                                                         .foregroundColor(.black)

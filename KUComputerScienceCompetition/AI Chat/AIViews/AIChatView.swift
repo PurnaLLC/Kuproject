@@ -14,8 +14,6 @@ struct AIChatView: View {
         
         @EnvironmentObject var viewsModel: AuthViewModel
         
-        
-        
         @Environment (\.dismiss) var dismiss
         
         

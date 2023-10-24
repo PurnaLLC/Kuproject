@@ -12,7 +12,7 @@ struct CreateTodo: View {
     var save: (CheckIn)->()
     @Environment(\.dismiss) var dismiss
     
-    @State private var streak: Int = 0
+    @AppStorage("streak") var streak: Int = 0
     @State private var lastCheckedDate: Date?
     
     @AppStorage("theme") var darkMode = false
@@ -48,12 +48,8 @@ struct CreateTodo: View {
                             
                             
                             
-                            HStack{
-                                if checkin.iscompleted{
-                                    Text("Done")
-                                }else{
-                                    Text("Mark As Done")
-                                }
+                       
+                                
                                 
                                 Button {
                                     
@@ -64,17 +60,37 @@ struct CreateTodo: View {
                                     if checkin.tododate > Date(){
                                         
                                         checkin.ontime = true
+                                        
+                                   
+
                                     }else{
                                         checkin.ontime = false
                                         
+                                        
                                     }
                                     
+                                    if checkin.iscompleted == true {
+                                        checkin.completedDate = Date()
+                                    }
                                     
-                                    
+                               
+                         
                                     
                                     
                                 } label: {
                                     
+                                    HStack{
+                                        
+                                        if checkin.iscompleted{
+                                            Text("Done")
+                                                .foregroundColor(darkMode ? Color.white : Color.black)
+
+                                        }else{
+                                            Text("Mark As Done")
+                                                .foregroundColor(darkMode ? Color.white : Color.black)
+
+                                        }
+                                        
                                     VStack{
                                         Image(systemName: "checkmark.circle")
                                         
@@ -149,11 +165,23 @@ struct CreateTodo: View {
                     
                     save(checkin)
                     
+                        
+                    
+                    
                     
                 }else{
                     
                     
+                    
+              
+                    
                     save(checkin)
+                    
+                        
+                    
+                    if checkin.iscompleted{
+                        performCheckIn(checkin)
+                    }
                     
                 }
                 
@@ -190,6 +218,27 @@ struct CreateTodo: View {
 
         
     }
+    
+    private func performCheckIn(_ checkin : CheckIn) {
+        
+        if checkin.iscompleted{
+            
+            if checkin.ontime == true{
+                
+                streak += 1
+            }else{
+                
+                streak = 0
+                
+            }
+            print(streak)
+        }
+        
+        
+        
+    }
+    
+
     
     
 

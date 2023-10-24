@@ -17,7 +17,7 @@ struct PasswordResetView: View {
     
     @Environment (\.dismiss) var dismiss
 
-    @Environment(\.presentationMode) var presentationMode // Added this line to access presentationMode
+    @Environment(\.presentationMode) var presentationMode
 
     
     var body: some View {

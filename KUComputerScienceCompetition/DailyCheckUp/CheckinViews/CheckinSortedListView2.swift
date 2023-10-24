@@ -22,11 +22,6 @@ struct CheckinSortedListView2: View {
     @State private var isEmpty: Bool = true
     @State private var isEmpty2: Bool = true
     @AppStorage("theme") var darkMode = false
-
-    
-
-    
-    
     
     @State private var isPresentingSheet = false
 
@@ -42,9 +37,10 @@ struct CheckinSortedListView2: View {
         VStack{
             if isShowingMenu == false {
                 
-                
                 Button {
+
                     isShowingMenu.toggle()
+
                 
                 } label: {
                     HStack{
@@ -119,7 +115,7 @@ struct CheckinSortedListView2: View {
                                     } label: {
                                         
                                         HStack{
-                                            Text("\(checkin.name) \(checkin.formattedDate())")
+                                            Text("\(checkin.name) ")
                                                 .font(.custom("Lora-Regular", size: 20))
                                                 .bold()
                                                 .foregroundColor(.black)
@@ -181,14 +177,7 @@ struct CheckinSortedListView2: View {
                        
                                     
                                     
-                                    .sheet(isPresented: $isPresentingSheet, content: {
-                                        CheckInEditView(checkin: checkin) { returnedCheckIn in
-                                            vm.update(checkin: returnedCheckIn)
-                                        }
-                                    })
-                                    
-                                    .preferredColorScheme(darkMode ? .dark : .light)
-
+                                   
                                     
                                     
                                 }
@@ -262,7 +251,7 @@ struct CheckinSortedListView2: View {
                                     } label: {
                                         
                                         HStack{
-                                            Text("\(checkin.name) \(checkin.formattedDate())")
+                                            Text("\(checkin.name) ")
                                                 .font(.custom("Lora-Regular", size: 20))
                                                 .bold()
                                                 .foregroundColor(.black)
@@ -325,14 +314,7 @@ struct CheckinSortedListView2: View {
                                     
                                 }
                                 
-                                .sheet(isPresented: $isPresentingSheet2, content: {
-                                    CheckInEditView(checkin: checkin) { returnedCheckIn in
-                                        vm.update(checkin: returnedCheckIn)
-                                    }
-                                })
-                                
-                                .preferredColorScheme(darkMode ? .dark : .light)
-
+            
                                 
                                 
                                 

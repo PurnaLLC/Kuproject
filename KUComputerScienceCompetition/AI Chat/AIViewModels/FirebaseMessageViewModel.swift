@@ -31,7 +31,6 @@ class FirebaseMessagesViewModel: ObservableObject {
         
         
     }
-
     
     func add(firebasemessage: FirebaseMessage) {
         ds.add(firebasemessage)
